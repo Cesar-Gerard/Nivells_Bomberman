@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="Bomberman_Practica.View.IntroView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bomberman_Practica.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="500"
+    d:DesignWidth="400"
+    >
+
+    <StackPanel Orientation="Vertical" Background="DarkSlateGray">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Actiu o No ACtiu-->
+            <CheckBox IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
+            
+
+            <!--Nom de la Intro-->
+            <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
+            <TextBox x:ConnectionId='3' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+
+
+            <!--Text de la Intro-->
+            <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
+            <TextBox x:ConnectionId='4' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+
+
+            <!--Temps de la Intro-->
+            <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
+            <TextBox x:ConnectionId='5' Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" x:Name="txbTemps"  Width="200" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+
+            <!--Imatge de la Intro-->
+            <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
+            <TextBox x:ConnectionId='6' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <Button x:ConnectionId='7' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                        >Browse</Button>
+
+       
+        </Grid>
+
+        <!--Preview de la Intro-->
+        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Margin="10 10 10 10">Preview</Button>
+        
+        
+        <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center">
+            <Image x:ConnectionId='2' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}" Height="300"></Image>
+        </Border>
+        
+    </StackPanel>
+
+</UserControl>
+
