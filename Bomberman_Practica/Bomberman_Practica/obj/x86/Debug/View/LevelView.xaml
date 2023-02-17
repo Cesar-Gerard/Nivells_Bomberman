@@ -24,6 +24,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <!--Actiu o No ACtiu-->
@@ -58,9 +59,14 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Grid x:ConnectionId='8' x:Name="grdNivell" Width="350" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="1">
+            <Grid Grid.Column="1" Grid.Row="7">
+                <Grid x:ConnectionId='8' x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue">
 
+                </Grid>
+                
             </Grid>
+            
+
 
         </Grid>
 

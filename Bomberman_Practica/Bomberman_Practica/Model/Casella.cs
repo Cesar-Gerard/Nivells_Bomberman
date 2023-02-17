@@ -26,7 +26,7 @@ namespace Bomberman_Practica.Model
         {
             List<Casella> resultat = new List<Casella>();
 
-            resultat.Add(new Casella("Bomba","/Assets/bomb.png"));
+            resultat.Add(new Casella("Fons","/Assets/fons_grid.png"));
             resultat.Add(new Casella("Indestructible", "/Assets/indestructible.png"));
             resultat.Add(new Casella("Destructible", "/Assets/soft.png"));
             resultat.Add(new Casella("Enemic", "/Assets/enemy.png"));

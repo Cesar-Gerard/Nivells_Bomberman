@@ -43,6 +43,9 @@
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\enemy.png">
       <PackagePath>Assets\enemy.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\fons_grid.png">
+      <PackagePath>Assets\fons_grid.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\indestructible.png">
       <PackagePath>Assets\indestructible.png</PackagePath>
     </AppxPackagedFile>

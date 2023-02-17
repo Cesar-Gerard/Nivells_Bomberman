@@ -14,10 +14,10 @@
     >
 
 
-    <Grid  HorizontalAlignment="Center">
-        <Grid x:Name="grdFonsNivell" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+    <Grid  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid x:Name="grdFonsNivell" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
-            <Image x:Name="imgNIvell" Stretch="Fill" Source="{Binding ElementName=UC_grid, Path=MyProperty, FallbackValue='/Assets/bomb.png' }"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            <Image x:Name="imgNIvell" Stretch="Fill"  Source="{Binding ElementName=UC_grid, Path=MyProperty }"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
             <Border x:Name="transparencia" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Border>
         </Grid>
         <Border x:Name="bFonsNivell" Background="Transparent" Tapped="grdFonsNivell_Tapped" >

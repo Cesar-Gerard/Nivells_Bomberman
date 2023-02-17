@@ -164,6 +164,7 @@
     <Content Include="Assets\back.png" />
     <Content Include="Assets\bomb.png" />
     <Content Include="Assets\enemy.png" />
+    <Content Include="Assets\fons_grid.png" />
     <Content Include="Assets\indestructible.png" />
     <Content Include="Assets\soft.png" />
     <Content Include="Properties\Default.rd.xml" />

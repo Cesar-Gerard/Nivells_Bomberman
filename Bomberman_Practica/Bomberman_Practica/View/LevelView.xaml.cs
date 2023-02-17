@@ -36,7 +36,7 @@ namespace Bomberman_Practica.View
         
         private void carregarGrid()
         {
-            for(int i =0; i<7; i++)
+            for(int i =0; i<20; i++)
             {
                 grdNivell.ColumnDefinitions.Add(new ColumnDefinition());
                 grdNivell.RowDefinitions.Add(new RowDefinition());
@@ -100,6 +100,7 @@ namespace Bomberman_Practica.View
             // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
             BitmapImage tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
 
+          
             
         }
 
@@ -107,7 +108,7 @@ namespace Bomberman_Practica.View
         {
             Casella entrada =(Casella)lsvBlocs.SelectedItem;
 
-            txbImatge.Text = entrada.Nom;
+            
             return entrada;
         }
 

@@ -55,7 +55,7 @@
         <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Margin="10 10 10 10">Preview</Button>
         
         
-        <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center">
+        <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
             <Image x:ConnectionId='2' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}" Height="300"></Image>
         </Border>
         

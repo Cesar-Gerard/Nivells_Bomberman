@@ -42,7 +42,7 @@ namespace Bomberman_Practica.View
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MyPropertyProperty =
-            DependencyProperty.Register("MyProperty", typeof(BitmapSource), typeof(LevelView), new PropertyMetadata(new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"))));
+            DependencyProperty.Register("MyProperty", typeof(BitmapSource), typeof(LevelView), new PropertyMetadata(new BitmapImage(new Uri("ms-appx:///Assets/fons_grid.png"))));
 
 
 
@@ -54,7 +54,11 @@ namespace Bomberman_Practica.View
             Casella item = this.level.pregunta_Item();
             BitmapImage Imatge_Item = new BitmapImage(new Uri("ms-appx://"+item.Img));
 
+            Imatge_Item.DecodePixelHeight = (int) imgNIvell.ActualHeight;
+            Imatge_Item.DecodePixelWidth = (int) imgNIvell.ActualWidth;
+
             imgNIvell.Source = Imatge_Item;
+            
 
         }
 

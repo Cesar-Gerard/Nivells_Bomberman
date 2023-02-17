@@ -72,8 +72,8 @@ namespace Bomberman_Practica.View
             // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
             BitmapImage tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
 
-            txbImatge.Text = copiedFile.Path;
-
+            
+            
 
             imgfons.Source = tmpBitmap;
 

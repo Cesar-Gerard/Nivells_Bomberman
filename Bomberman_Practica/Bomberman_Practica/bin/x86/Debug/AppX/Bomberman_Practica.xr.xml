@@ -19,8 +19,10 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
@@ -106,6 +108,8 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="MinHeight" />
+      <RootProperty Name="MaxHeight" />
       <RootProperty Name="Child" />
       <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
