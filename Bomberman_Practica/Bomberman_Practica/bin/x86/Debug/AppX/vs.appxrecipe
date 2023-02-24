@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>282042BAFA56371D3AD30F50A127F27DEFF2A6365C45DA6B5265E247FB6364F3</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>61ED689B3459B10D2A503BA3768BC6566FED5A899BEAE85FE9C9C850956E73A5</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d9b34850-3da4-4d0c-82f8-b35b7e17c56b_1.0.0.0_x86__ddft8mdpadgaw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d9b34850-3da4-4d0c-82f8-b35b7e17c56b_ddft8mdpadgaw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d9b34850-3da4-4d0c-82f8-b35b7e17c56b</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-02-17T16:54:35.897</Modified>
+      <Modified>2023-02-24T16:11:40.086</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Bomberman_Practica.exe">
       <PackagePath>entrypoint\Bomberman_Practica.exe</PackagePath>
-      <Modified>2023-02-17T16:54:35.350</Modified>
+      <Modified>2023-02-24T16:11:39.472</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -110,39 +110,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Bomberman_Practica.xr.xml">
       <PackagePath>Bomberman_Practica.xr.xml</PackagePath>
-      <Modified>2023-02-17T16:54:35.231</Modified>
+      <Modified>2023-02-24T15:55:10.622</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.264</Modified>
+      <Modified>2023-02-24T16:11:39.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Editor.xbf">
       <PackagePath>Editor.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.265</Modified>
+      <Modified>2023-02-24T16:11:39.377</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Jugar.xbf">
       <PackagePath>Jugar.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.266</Modified>
+      <Modified>2023-02-24T16:11:39.378</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.267</Modified>
+      <Modified>2023-02-24T16:11:39.379</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog1.xbf">
+      <PackagePath>View\ContentDialog1.xbf</PackagePath>
+      <Modified>2023-02-24T16:11:39.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\IntroView.xbf">
       <PackagePath>View\IntroView.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.267</Modified>
+      <Modified>2023-02-24T16:11:39.384</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\LevelView.xbf">
       <PackagePath>View\LevelView.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.268</Modified>
+      <Modified>2023-02-24T16:11:39.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\UI_Casella.xbf">
       <PackagePath>View\UI_Casella.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.269</Modified>
+      <Modified>2023-02-24T16:11:39.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\UI_GRID.xbf">
       <PackagePath>View\UI_GRID.xbf</PackagePath>
-      <Modified>2023-02-17T16:54:35.269</Modified>
+      <Modified>2023-02-24T16:11:39.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -150,11 +154,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-02-16T18:17:07.763</Modified>
+      <Modified>2023-02-23T16:20:43.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Core\Bomberman_Practica.exe">
       <PackagePath>Bomberman_Practica.exe</PackagePath>
-      <Modified>2023-02-17T16:54:35.891</Modified>
+      <Modified>2023-02-24T16:11:40.079</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

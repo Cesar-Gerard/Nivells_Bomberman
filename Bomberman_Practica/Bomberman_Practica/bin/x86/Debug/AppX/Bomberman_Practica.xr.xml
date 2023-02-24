@@ -61,8 +61,9 @@
       <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Bomberman_Practica.Jugar" />
     <RootType FullName="Windows.UI.Xaml.Controls.NavigationView">
@@ -92,6 +93,26 @@
       <RootProperty Name="IsTabStop" />
     </RootType>
     <RootType FullName="Bomberman_Practica.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
+      <RootProperty Name="SecondaryButtonText" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="SecondaryButtonClick" />
+      <RootEvent Name="Loaded" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="Path" />
+      <RootProperty Name="FallbackValue" />
+    </RootType>
+    <RootType FullName="Bomberman_Practica.View.ContentDialog1" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />
@@ -114,19 +135,6 @@
       <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Tapped" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="Path" />
-      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">

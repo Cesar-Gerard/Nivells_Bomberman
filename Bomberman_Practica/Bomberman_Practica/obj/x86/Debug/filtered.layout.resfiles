@@ -17,6 +17,7 @@ Bomberman_Practica.xr.xml
 Editor.xbf
 Jugar.xbf
 MainPage.xbf
+View\ContentDialog1.xbf
 View\IntroView.xbf
 View\LevelView.xbf
 View\UI_Casella.xbf

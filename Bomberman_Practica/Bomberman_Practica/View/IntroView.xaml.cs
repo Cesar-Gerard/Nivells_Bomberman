@@ -22,8 +22,12 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace Bomberman_Practica.View
 {
+
     public sealed partial class IntroView : UserControl
     {
+        BitmapImage tmpBitmap = null;
+
+
         public IntroView()
         {
             this.InitializeComponent();
@@ -70,13 +74,22 @@ namespace Bomberman_Practica.View
             // Copiar l'arxiu triat a la carpeta indicada, usant el nom que hem muntat
             StorageFile copiedFile = await sf.CopyAsync(iconsFolder, name);
             // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
-            BitmapImage tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
+             tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
 
             
             
 
             imgfons.Source = tmpBitmap;
 
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ContentDialog1 entrada = new ContentDialog1(txbNom.Text, imgfons.Source,txbDesc.Text);
+
+            entrada.ShowAsync();
+            
 
         }
     }

@@ -10,7 +10,10 @@
     d:DesignWidth="400"
     >
 
+    
     <StackPanel Orientation="Vertical" Background="DarkSlateGray">
+        
+                   
         <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -31,35 +34,41 @@
 
             <!--Nom de la Intro-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox x:ConnectionId='3' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:ConnectionId='4' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text de la Intro-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='4' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox x:ConnectionId='5'  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
 
             <!--Temps de la Intro-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='5' Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" x:Name="txbTemps"  Width="200" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox x:ConnectionId='6' Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" x:Name="txbTemps"  Width="200" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
             <!--Imatge de la Intro-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='6' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
-            <Button x:ConnectionId='7' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                        >Browse</Button>
+            <TextBox x:ConnectionId='7' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <Button x:ConnectionId='8' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                        >Browse</Button>
 
        
         </Grid>
 
         <!--Preview de la Intro-->
-        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Margin="10 10 10 10">Preview</Button>
-        
-        
+        <Button x:ConnectionId='2'  x:Name="btnPreview"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Margin="10 10 10 10"                     >Preview</Button>
+
+       
+
+
         <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
-            <Image x:ConnectionId='2' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}" Height="300"></Image>
+            <Image x:ConnectionId='3' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}" Height="300"></Image>
         </Border>
         
+
+   
     </StackPanel>
+    
+    
 
 </UserControl>
 

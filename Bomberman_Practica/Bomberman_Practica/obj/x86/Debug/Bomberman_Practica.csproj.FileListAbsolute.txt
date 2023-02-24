@@ -73,3 +73,8 @@ D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\UI_GRID.xbf
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\UI_GRID.xbf
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\Bomberman_Practica.csproj.AssemblyReference.cache
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog1.xbf
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog1.g.i.cs
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog1.g.cs
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog1.xaml
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog1.xbf
