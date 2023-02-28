@@ -13,8 +13,8 @@
     <Grid>
         <Image x:ConnectionId='2' x:Name="IMGPreview" Source="{Binding}"></Image>
         <StackPanel Orientation="Vertical">
-            <TextBlock x:ConnectionId='3' x:Name="TitolPreview" FontSize="30" HorizontalAlignment="Center" Padding="10">Hola</TextBlock>
-            <TextBlock x:ConnectionId='4' x:Name="DescripcioPreview" FontSize="15" HorizontalAlignment="Center">Hola</TextBlock>
+            <TextBlock x:ConnectionId='3' x:Name="TitolPreview" FontStyle="Italic" Foreground="Cyan" FontSize="30" HorizontalAlignment="Center" Padding="10">Hola</TextBlock>
+            <TextBlock x:ConnectionId='4' x:Name="DescripcioPreview" FontSize="15" Foreground="Cyan" HorizontalAlignment="Center">Hola</TextBlock>
         </StackPanel>
     </Grid>
    

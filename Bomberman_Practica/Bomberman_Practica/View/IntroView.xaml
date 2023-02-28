@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     d:DesignHeight="500"
     d:DesignWidth="400"
+    Loaded="UserControl_Loaded"
     >
 
     
@@ -43,10 +44,17 @@
 
 
             <!--Temps de la Intro-->
+            
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
-            <TextBox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" x:Name="txbTemps"  Width="200" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
+                <ComboBox x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
+            </StackPanel>
+            
+            
 
-            <!--Imatge de la Intro-->
+                <!--Imatge de la Intro-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
             <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
             <Button x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="btnImatge_Click">Browse</Button>

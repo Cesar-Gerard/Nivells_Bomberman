@@ -21,16 +21,20 @@ namespace Bomberman_Practica.View
 {
     public sealed partial class ContentDialog1 : ContentDialog
     {
-        public String titol;
+        private String titol;
         private ImageSource imatge_source = null;
-        public String descripcio;
+        private String descripcio;
+        private List<Int32> temps;
+
        
-        public ContentDialog1(String titol_entrada,ImageSource imatge_entrada,String descripcio_entrada)
+        public ContentDialog1(IntroView entrada)
         {
             this.InitializeComponent();
-            titol = titol_entrada;
-            imatge_source = imatge_entrada;
-            descripcio = descripcio_entrada;
+            titol = entrada.recuperarTitol();
+            descripcio = entrada.recuperarDescripcio();
+            imatge_source = entrada.recuperarImatge();
+            temps = entrada.recuperarTemps();
+            
 
             comptador_temps();
         }
@@ -53,7 +57,7 @@ namespace Bomberman_Practica.View
         private void comptador_temps()
         {
             var timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 5);
+            timer.Interval = new TimeSpan(temps[0], temps[1], temps[2]);
             
             timer.Start();
             timer.Tick += (s, e) =>

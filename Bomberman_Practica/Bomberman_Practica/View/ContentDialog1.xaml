@@ -13,8 +13,8 @@
     <Grid>
         <Image x:Name="IMGPreview" Source="{Binding}"></Image>
         <StackPanel Orientation="Vertical">
-            <TextBlock x:Name="TitolPreview" FontSize="30" HorizontalAlignment="Center" Padding="10">Hola</TextBlock>
-            <TextBlock x:Name="DescripcioPreview" FontSize="15" HorizontalAlignment="Center">Hola</TextBlock>
+            <TextBlock x:Name="TitolPreview" FontStyle="Italic" Foreground="Cyan" FontSize="30" HorizontalAlignment="Center" Padding="10">Hola</TextBlock>
+            <TextBlock x:Name="DescripcioPreview" FontSize="15" Foreground="Cyan" HorizontalAlignment="Center">Hola</TextBlock>
         </StackPanel>
     </Grid>
    

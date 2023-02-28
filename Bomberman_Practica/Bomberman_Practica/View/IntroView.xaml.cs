@@ -17,6 +17,8 @@ using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
+using System.ServiceModel.Channels;
+using Windows.UI.Popups;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -70,27 +72,100 @@ namespace Bomberman_Practica.View
             // Dins de la carpeta de dades, creem una nova carpeta "icons"
             var iconsFolder = await folder.CreateFolderAsync("icons", CreationCollisionOption.OpenIfExists);
             // Creem un nom usant la data i hora, de forma que no poguem repetir noms.
-            string name = (DateTime.Now).ToString("yyyyMMddhhmmss") + "_" + sf.Name;
-            // Copiar l'arxiu triat a la carpeta indicada, usant el nom que hem muntat
-            StorageFile copiedFile = await sf.CopyAsync(iconsFolder, name);
-            // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
-             tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
+            if (sf == null)
+            {
 
-            
-            
+                var messageDialog = new MessageDialog("Has de seleccionar una imatge del buscador o fer servir la ja existent");
+                messageDialog.ShowAsync();
+            }
+            else
+            {
+                string name = (DateTime.Now).ToString("yyyyMMddhhmmss") + "_" + sf.Name;
+                // Copiar l'arxiu triat a la carpeta indicada, usant el nom que hem muntat
+                StorageFile copiedFile = await sf.CopyAsync(iconsFolder, name);
+                // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
+                tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
 
-            imgfons.Source = tmpBitmap;
+                imgfons.Source = tmpBitmap;
+            }
+
 
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ContentDialog1 entrada = new ContentDialog1(txbNom.Text, imgfons.Source,txbDesc.Text);
+            ContentDialog1 entrada = new ContentDialog1(this);
 
-            entrada.ShowAsync();
-            
+            int hores = (int)cbmHores.SelectedItem;
+            int minuts = (int)cbmMinuts.SelectedItem;
+            int segons = (int)cbmSegons.SelectedItem;
+
+
+            if (hores == 0 && minuts == 0 && segons == 0)
+            {
+                var messageDialog = new MessageDialog("El temps ha de tenir un valor mínim de 1 segon");
+                messageDialog.ShowAsync();
+            }
+            else
+            {
+
+                IAsyncOperation<ContentDialogResult> asyncOperation = entrada.ShowAsync();
+            }
 
         }
+
+
+        private void carregarComboTemps()
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                cbmHores.Items.Add(i);
+                cbmMinuts.Items.Add(i);
+                cbmSegons.Items.Add(i);
+            }
+
+            cbmHores.SelectedItem = 0; cbmMinuts.SelectedItem=0; cbmSegons.SelectedItem=0;
+        }
+
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            carregarComboTemps();
+        }
+
+        //Metodes per recuperar els elements de informació en el content view
+
+
+        public String recuperarTitol()
+        {
+            return txbNom.Text;
+        }
+
+        public String recuperarDescripcio()
+        {
+            return txbDesc.Text;
+        }
+
+        public ImageSource recuperarImatge()
+        {
+            return imgfons.Source;
+        }
+
+        public List<Int32> recuperarTemps()
+        {
+            List<Int32> temps= new List<Int32>();
+
+            
+
+
+
+                temps.Add(Int32.Parse(cbmHores.SelectedItem.ToString()));
+                temps.Add(Int32.Parse(cbmMinuts.SelectedItem.ToString()));
+                temps.Add(Int32.Parse(cbmSegons.SelectedItem.ToString()));
+            
+            return temps;
+        }
+       
     }
 }
