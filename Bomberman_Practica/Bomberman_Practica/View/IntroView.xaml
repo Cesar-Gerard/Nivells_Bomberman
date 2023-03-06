@@ -30,7 +30,7 @@
             </Grid.RowDefinitions>
 
             <!--Actiu o No ACtiu-->
-            <CheckBox IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
+            <CheckBox x:Name="chEstat" Grid.Row="0" Grid.Column="0"  IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
             
 
             <!--Nom de la Intro-->
@@ -63,13 +63,15 @@
         </Grid>
 
         <!--Preview de la Intro-->
-        <Button  x:Name="btnPreview"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Margin="10 10 10 10" Click="Button_Click">Preview</Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="0">
+            <Button  x:Name="btnPreview"  HorizontalAlignment="Center" Margin="10 10 10 10" Click="Button_Click" >Preview</Button>
+            <Button x:Name="btnCrear" HorizontalAlignment="Center" Margin="10 10 10 10" Click="btnCrear_Click" >Guardar Introduccio</Button>
+        </StackPanel>
 
-       
 
 
         <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
-            <Image x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}" Height="300"></Image>
+            <Image x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
         </Border>
         
 

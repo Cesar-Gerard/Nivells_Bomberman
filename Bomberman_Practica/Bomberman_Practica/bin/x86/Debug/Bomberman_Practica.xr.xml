@@ -104,7 +104,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
-      <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Stretch" />
@@ -122,12 +121,6 @@
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Content" />
-      <RootEvent Name="Click" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
@@ -138,6 +131,12 @@
       <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Tapped" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">

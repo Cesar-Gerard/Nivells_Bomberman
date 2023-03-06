@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>E4C99C526D1E70CC7BF7D4A8B30A4844F24FD2A3317549DFDCF21418DF5BE484</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>1F6963B19BFBCF00C8CE8A483ADD73E5F963E89B615B0A8D5BB3E22C51CAFB9C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d9b34850-3da4-4d0c-82f8-b35b7e17c56b_1.0.0.0_x86__ddft8mdpadgaw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d9b34850-3da4-4d0c-82f8-b35b7e17c56b_ddft8mdpadgaw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d9b34850-3da4-4d0c-82f8-b35b7e17c56b</RegisteredPackageID>
@@ -30,21 +30,221 @@
     <AppXManifest Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-02-28T19:18:48.931</Modified>
+      <Modified>2023-03-05T19:15:04.528</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Bomberman_Practica.exe">
       <PackagePath>entrypoint\Bomberman_Practica.exe</PackagePath>
-      <Modified>2023-02-28T19:18:47.688</Modified>
+      <Modified>2023-03-05T19:15:03.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
+      <PackagePath>ColorCode.Core.dll</PackagePath>
+      <Modified>2018-10-05T23:30:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\colorcode.uwp\2.0.6\lib\uap10.0\ColorCode.UWP.dll">
+      <PackagePath>ColorCode.UWP.dll</PackagePath>
+      <Modified>2018-10-05T23:30:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\google.protobuf\3.19.4\lib\netstandard2.0\Google.Protobuf.dll">
+      <PackagePath>Google.Protobuf.dll</PackagePath>
+      <Modified>2022-01-28T08:49:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\k4os.compression.lz4\1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.dll">
+      <PackagePath>K4os.Compression.LZ4.dll</PackagePath>
+      <Modified>2020-09-12T01:11:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\k4os.compression.lz4.streams\1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll">
+      <PackagePath>K4os.Compression.LZ4.Streams.dll</PackagePath>
+      <Modified>2020-09-12T01:11:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\k4os.hash.xxhash\1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.dll">
+      <PackagePath>K4os.Hash.xxHash.dll</PackagePath>
+      <Modified>2019-07-03T20:39:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
+      <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
+      <Modified>2020-04-14T22:38:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.bcl.hashcode\1.1.1\lib\netstandard2.0\Microsoft.Bcl.HashCode.dll">
+      <PackagePath>Microsoft.Bcl.HashCode.dll</PackagePath>
+      <Modified>2020-11-16T21:14:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.entityframeworkcore\3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.dll</PackagePath>
+      <Modified>2022-11-16T20:06:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.entityframeworkcore.abstractions\3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.Abstractions.dll</PackagePath>
+      <Modified>2022-11-16T20:06:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.entityframeworkcore.relational\3.1.27\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.Relational.dll</PackagePath>
+      <Modified>2022-06-16T17:32:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.caching.abstractions\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Abstractions.dll</PackagePath>
+      <Modified>2022-11-16T18:41:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.caching.memory\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Memory.dll</PackagePath>
+      <Modified>2022-11-16T18:42:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.configuration\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
+      <Modified>2022-11-16T18:42:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.configuration.abstractions\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
+      <Modified>2022-11-16T18:42:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.configuration.binder\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Binder.dll</PackagePath>
+      <Modified>2022-11-16T18:42:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.dependencyinjection\3.1.32\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
+      <Modified>2022-11-16T18:43:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\3.1.32\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+      <Modified>2022-11-16T18:42:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.logging\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.dll">
+      <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
+      <Modified>2022-11-16T18:42:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.logging.abstractions\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
+      <Modified>2022-11-16T18:42:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.options\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Options.dll">
+      <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
+      <Modified>2022-11-16T18:42:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.extensions.primitives\3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll">
+      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
+      <Modified>2022-11-16T18:42:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.identity.client\1.1.2-preview0008\lib\win81\Microsoft.Identity.Client.dll">
+      <PackagePath>Microsoft.Identity.Client.dll</PackagePath>
+      <Modified>2018-02-02T18:02:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit\5.0.0\lib\netstandard2.0\Microsoft.Toolkit.dll">
+      <PackagePath>Microsoft.Toolkit.dll</PackagePath>
+      <Modified>2018-10-31T03:08:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.parsers\5.0.0\lib\netstandard2.0\Microsoft.Toolkit.Parsers.dll">
+      <PackagePath>Microsoft.Toolkit.Parsers.dll</PackagePath>
+      <Modified>2018-10-31T03:08:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.dll</PackagePath>
+      <Modified>2018-10-31T03:08:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.dll</PackagePath>
+      <Modified>2018-10-31T03:09:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui.animations\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Animations.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Animations.dll</PackagePath>
+      <Modified>2018-10-31T03:09:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui.controls\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Controls.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.dll</PackagePath>
+      <Modified>2018-10-31T03:09:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll</PackagePath>
+      <Modified>2018-10-31T03:09:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2016-02-22T13:59:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2016-02-22T13:59:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\mysql.data\8.0.31\lib\netstandard2.0\MySql.Data.dll">
+      <PackagePath>MySql.Data.dll</PackagePath>
+      <Modified>2022-09-09T14:08:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\mysql.data\8.0.31\lib\netstandard2.0\ZstdNet.dll">
+      <PackagePath>ZstdNet.dll</PackagePath>
+      <Modified>2022-09-09T14:03:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\mysql.entityframeworkcore\3.1.27\lib\netstandard2.0\MySql.EntityFrameworkCore.dll">
+      <PackagePath>MySql.EntityFrameworkCore.dll</PackagePath>
+      <Modified>2022-09-09T14:08:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2017-06-18T13:57:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\portable.bouncycastle\1.9.0\lib\netstandard2.0\BouncyCastle.Crypto.dll">
+      <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
+      <Modified>2021-10-19T11:53:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\runtimes\win10-x86\native\Robmikh.CompositionSurfaceFactory.dll">
+      <PackagePath>Robmikh.CompositionSurfaceFactory.dll</PackagePath>
+      <Modified>2017-09-27T19:20:54.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2021-02-05T01:15:46.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.collections.immutable\1.7.1\lib\netstandard2.0\System.Collections.Immutable.dll">
+      <PackagePath>System.Collections.Immutable.dll</PackagePath>
+      <Modified>2020-04-14T22:38:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.configuration.configurationmanager\4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll">
+      <PackagePath>System.Configuration.ConfigurationManager.dll</PackagePath>
+      <Modified>2017-11-20T18:09:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.diagnostics.diagnosticsource\4.7.1\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll">
+      <PackagePath>System.Diagnostics.DiagnosticSource.dll</PackagePath>
+      <Modified>2020-04-14T22:48:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.runtime.compilerservices.unsafe\5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+      <Modified>2020-10-19T18:46:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.security.cryptography.protecteddata\4.4.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll">
+      <PackagePath>System.Security.Cryptography.ProtectedData.dll</PackagePath>
+      <Modified>2017-07-19T10:01:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\system.security.permissions\4.7.0\lib\netstandard2.0\System.Security.Permissions.dll">
+      <PackagePath>System.Security.Permissions.dll</PackagePath>
+      <Modified>2019-11-15T08:37:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\win2d.uwp\1.21.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
+      <Modified>2017-06-26T03:01:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\bin\Debug\netstandard2.0\ConnexioBD.dll">
+      <PackagePath>ConnexioBD.dll</PackagePath>
+      <Modified>2023-03-05T19:08:47.946</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
+      <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
+      <Modified>2017-09-27T19:20:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\win2d.uwp\1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+      <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
+      <Modified>2017-06-26T03:01:44.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2020-12-02T03:52:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui.controls\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml</PackagePath>
+      <Modified>2018-10-31T03:04:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gerar\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\5.0.0\lib\uap10.0.16299\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml</PackagePath>
+      <Modified>2018-10-31T03:03:52.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\back.png">
       <PackagePath>Assets\back.png</PackagePath>
@@ -110,43 +310,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Bomberman_Practica.xr.xml">
       <PackagePath>Bomberman_Practica.xr.xml</PackagePath>
-      <Modified>2023-02-28T19:06:36.957</Modified>
+      <Modified>2023-03-05T18:47:10.776</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.554</Modified>
+      <Modified>2023-03-05T19:15:03.056</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Editor.xbf">
       <PackagePath>Editor.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.555</Modified>
+      <Modified>2023-03-05T19:15:03.057</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Jugar.xbf">
       <PackagePath>Jugar.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.557</Modified>
+      <Modified>2023-03-05T19:15:03.058</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.557</Modified>
+      <Modified>2023-03-05T19:15:03.060</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog1.xbf">
       <PackagePath>View\ContentDialog1.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.559</Modified>
+      <Modified>2023-03-05T19:15:03.061</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\IntroView.xbf">
       <PackagePath>View\IntroView.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.560</Modified>
+      <Modified>2023-03-05T19:15:03.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\LevelView.xbf">
       <PackagePath>View\LevelView.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.561</Modified>
+      <Modified>2023-03-05T19:15:03.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\UI_Casella.xbf">
       <PackagePath>View\UI_Casella.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.563</Modified>
+      <Modified>2023-03-05T19:15:03.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\UI_GRID.xbf">
       <PackagePath>View\UI_GRID.xbf</PackagePath>
-      <Modified>2023-02-28T19:18:47.564</Modified>
+      <Modified>2023-03-05T19:15:03.067</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -154,11 +354,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-02-28T18:12:22.667</Modified>
+      <Modified>2023-03-05T18:49:33.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\Core\Bomberman_Practica.exe">
       <PackagePath>Bomberman_Practica.exe</PackagePath>
-      <Modified>2023-02-28T19:18:48.921</Modified>
+      <Modified>2023-03-05T19:15:04.521</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

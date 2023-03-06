@@ -1,4 +1,5 @@
 ﻿using Bomberman_Practica.Model;
+using ConnexioBD;
 using System;
 using System.Collections.Generic;
 using System.IO;

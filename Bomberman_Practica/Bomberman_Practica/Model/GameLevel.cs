@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConnexioBD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,8 @@ namespace Bomberman_Practica.Model
         Fi final;
         String back;
 
-        public GameLevel(string nom, string descripcio, string image, int temps, int id, bool actiu, List<Destruible> destruibles, List<Indestructible> indestructibles, List<Enemic> enemics, Inici inici, Fi final, string back) : base(nom, descripcio, image, temps, actiu)
+        public GameLevel(string nom, string descripcio, string image, int hores, int minuts, int segons, bool actiu) : base(nom, descripcio, image, hores, minuts, segons, actiu)
         {
-
             Id = id;
             Destruibles = destruibles;
             Indestructibles = indestructibles;
@@ -27,7 +27,6 @@ namespace Bomberman_Practica.Model
             Final = final;
             Back = back;
         }
-
 
         public int Id { get => id; set => id = value; }
         public List<Destruible> Destruibles { get => destruibles; set => destruibles = value; }

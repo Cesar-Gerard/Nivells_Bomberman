@@ -19,11 +19,14 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 using System.ServiceModel.Channels;
 using Windows.UI.Popups;
+using static System.Net.Mime.MediaTypeNames;
+using ConnexioBD;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Bomberman_Practica.View
 {
+
 
     public sealed partial class IntroView : UserControl
     {
@@ -33,6 +36,7 @@ namespace Bomberman_Practica.View
         public IntroView()
         {
             this.InitializeComponent();
+            
         }
 
 
@@ -87,6 +91,7 @@ namespace Bomberman_Practica.View
                 tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
 
                 imgfons.Source = tmpBitmap;
+                txbImatge.Text = copiedFile.Path;
             }
 
 
@@ -101,6 +106,7 @@ namespace Bomberman_Practica.View
             int minuts = (int)cbmMinuts.SelectedItem;
             int segons = (int)cbmSegons.SelectedItem;
 
+            
 
             if (hores == 0 && minuts == 0 && segons == 0)
             {
@@ -132,6 +138,7 @@ namespace Bomberman_Practica.View
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             carregarComboTemps();
+            
         }
 
         //Metodes per recuperar els elements de informació en el content view
@@ -156,16 +163,48 @@ namespace Bomberman_Practica.View
         {
             List<Int32> temps= new List<Int32>();
 
-            
-
-
+           
 
                 temps.Add(Int32.Parse(cbmHores.SelectedItem.ToString()));
                 temps.Add(Int32.Parse(cbmMinuts.SelectedItem.ToString()));
                 temps.Add(Int32.Parse(cbmSegons.SelectedItem.ToString()));
-            
             return temps;
         }
-       
+
+        private void btnCrear_Click(object sender, RoutedEventArgs e)
+        {
+
+            BitmapImage bitMap = imgfons.Source as BitmapImage;
+            Uri uri = bitMap?.UriSource;
+
+
+            String nom=txbNom.Text;
+            String des=txbDesc.Text;
+            int hores=Int32.Parse(cbmHores.SelectedItem.ToString());
+            int minuts= Int32.Parse(cbmMinuts.SelectedItem.ToString()); 
+            int segons= Int32.Parse(cbmSegons.SelectedItem.ToString());
+            String imatge = uri.AbsolutePath; 
+            bool estat = false;
+
+            if (chEstat.IsChecked == true)
+            {
+                estat = true;
+            }
+            else
+            {
+                estat = false;
+            }
+           
+            
+
+            Intro nou = new Intro( nom, des, imatge, hores, minuts, segons,  estat);
+
+            Intro.Inserir( nou );
+
+
+        }
+
+
+        
     }
 }

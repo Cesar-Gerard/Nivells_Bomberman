@@ -1,0 +1,10 @@
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\bin\Debug\netstandard2.0\ConnexioBD.deps.json
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\bin\Debug\netstandard2.0\ConnexioBD.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\bin\Debug\netstandard2.0\ConnexioBD.pdb
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.csproj.AssemblyReference.cache
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.GeneratedMSBuildEditorConfig.editorconfig
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.AssemblyInfoInputs.cache
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.AssemblyInfo.cs
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.csproj.CoreCompileInputs.cache
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\ConnexioBD\obj\Debug\netstandard2.0\ConnexioBD.pdb
