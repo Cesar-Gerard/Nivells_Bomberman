@@ -26,7 +26,7 @@ using ConnexioBD;
 
 namespace Bomberman_Practica.View
 {
-
+    
 
     public sealed partial class IntroView : UserControl
     {
@@ -197,9 +197,11 @@ namespace Bomberman_Practica.View
            
             
 
-            Intro nou = new Intro( nom, des, imatge, hores, minuts, segons,  estat);
+            Intro nou = new Intro( nom, des,  hores, minuts, segons,  estat, imatge);
 
             Intro.Inserir( nou );
+
+            
 
 
         }

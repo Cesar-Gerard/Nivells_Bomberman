@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Url" />
+    <RootPropertyPathName Name="Segons" />
+    <RootPropertyPathName Name="Minuts" />
+    <RootPropertyPathName Name="Hores" />
+    <RootPropertyPathName Name="Descripcio" />
+    <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="UI_Fons" />
     <RootPropertyPathName Name="Seleccio" />
-    <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="Img" />
     <RootPropertyPathName Name="MyProperty" />
   </Roots.PropertyPathNames>
@@ -18,6 +23,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="MaxWidth" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
@@ -53,9 +59,40 @@
     <RootType FullName="Bomberman_Practica.View.IntroView">
       <RootProperty Name="Visibility" />
     </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid">
+      <RootProperty Name="Background" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="AutoGenerateColumns" />
+      <RootProperty Name="Columns" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="Content" />
       <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn">
+      <RootProperty Name="Header" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Binding" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGridTemplateColumn">
+      <RootProperty Name="Header" />
+      <RootProperty Name="CellTemplate" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="Path" />
+      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Bomberman_Practica.Editor" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -101,18 +138,6 @@
       <RootProperty Name="Content" />
       <RootEvent Name="SecondaryButtonClick" />
       <RootEvent Name="Loaded" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="Path" />
-      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Bomberman_Practica.View.ContentDialog1" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
@@ -164,9 +189,6 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="SelectionChanged" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Bomberman_Practica.View.UI_Casella">
       <RootProperty Name="Seleccio" />

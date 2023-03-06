@@ -4,9 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Bomberman_Practica"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:view="using:Bomberman_Practica.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:view="using:Bomberman_Practica.View"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded"
     >
 
     <Grid>
@@ -16,10 +17,75 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Grid.Column="0">
-            
-            
-            
+
+    <StackPanel Grid.Column="0">
+
+
+            <controls:DataGrid
+                x:Name="GRDLevel"
+                SelectionChanged="GRDLevel_SelectionChanged"
+                Background="Black"
+                  HorizontalAlignment="Stretch"
+                      AutoGenerateColumns="False"
+                
+            >
+
+                <controls:DataGrid.Columns>
+
+                    <controls:DataGridTextColumn
+                    Header="Nom"
+                    Width="SizeToHeader"
+                    Binding="{Binding Nom}">
+
+                    </controls:DataGridTextColumn>
+
+
+                    <controls:DataGridTextColumn
+                        Header="Descripció"
+                        Width="SizeToHeader"
+                        Binding="{Binding Descripcio}"
+                        ></controls:DataGridTextColumn>
+
+                    <controls:DataGridTextColumn
+                        Header="Hores"
+                        Width="SizeToHeader"
+                        Binding="{Binding Hores}"
+                        ></controls:DataGridTextColumn>
+
+                    <controls:DataGridTextColumn
+                        Header="Minuts"
+                        Width="SizeToHeader"
+                        Binding="{Binding Minuts}"
+                        ></controls:DataGridTextColumn>
+
+                    <controls:DataGridTextColumn
+                        Header="Segons"
+                        Width="SizeToHeader"
+                        Binding="{Binding Segons}"
+                        ></controls:DataGridTextColumn>
+
+
+
+                    <controls:DataGridTemplateColumn
+                        Header="Imatge">
+                        <controls:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid MaxWidth="50">
+                                    <Image Source="{Binding Url}"></Image>
+                                </Grid>
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellTemplate>
+                    </controls:DataGridTemplateColumn>
+
+                   
+
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
+
+
+
+
+
             <RadioButton x:Name="rdoNivellLloc" Click="rdoNivellLloc_Click">Nivell</RadioButton>
             <RadioButton x:Name="rdoIntro" Click="rdoNivellLloc_Click">Intro</RadioButton>
         </StackPanel>

@@ -6,19 +6,17 @@ using System.Data;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Policy;
+using Google.Protobuf.WellKnownTypes;
+using System.Collections.ObjectModel;
 
 namespace ConnexioBD
 {
     public class Intro : Level
     {
-        String url;
-
-        public Intro(string nom, string descripcio, string image, int hores,int minuts, int segons, bool actiu) : base(nom, descripcio, image, hores, minuts,segons, actiu)
+        public Intro(string nom, string descripcio, int hores, int minuts, int segons, bool actiu, string url) : base(nom, descripcio, hores, minuts, segons, actiu, url)
         {
-            Url = image;
         }
 
-        public string Url { get => url; set => url = value; }
 
 
 
@@ -73,6 +71,52 @@ namespace ConnexioBD
 
             return false;
         }
+
+
+
+
+
+
+        public static List<Level> getIntro()
+        {
+            List<Level> resultat = new List<Level>();
+            using (MySQLDbContext context = new MySQLDbContext())
+            {
+                using (var connection = context.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var comanda = connection.CreateCommand())
+                    {
+                        comanda.CommandText = @"select * from introduccio";
+                       
+
+                        DbDataReader reader = comanda.ExecuteReader();
+                        while (reader.Read())
+                        {
+
+                          
+                            string intro_nom = reader.GetString(reader.GetOrdinal("intro_nom"));
+                            string intro_desc = reader.GetString(reader.GetOrdinal("intro_desc"));
+                            int hores = reader.GetInt32(reader.GetOrdinal("hores"));
+                            int minuts = reader.GetInt32(reader.GetOrdinal("minuts"));
+                            int segons = reader.GetInt32(reader.GetOrdinal("segons"));
+                            string intro_imatge = reader.GetString(reader.GetOrdinal("intro_imatge"));
+                            bool estat = reader.GetBoolean(reader.GetOrdinal("estat"));
+
+
+                            Intro nou = new Intro(intro_nom, intro_desc, hores, minuts, segons,  estat, intro_imatge);
+                            resultat.Add(nou);
+                        }
+                    }
+                }
+            }
+            return resultat;
+        }
+
+
+
+
+
 
 
 

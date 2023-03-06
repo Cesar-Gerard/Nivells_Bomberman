@@ -133,7 +133,6 @@
     <Compile Include="Model\Destruible.cs" />
     <Compile Include="Model\Enemic.cs" />
     <Compile Include="Model\Fi.cs" />
-    <Compile Include="Model\GameLevel.cs" />
     <Compile Include="Model\GameObject.cs" />
     <Compile Include="Model\Indestructible.cs" />
     <Compile Include="Model\Inici.cs" />
