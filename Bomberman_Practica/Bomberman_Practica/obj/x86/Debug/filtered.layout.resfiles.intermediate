@@ -18,6 +18,7 @@ Editor.xbf
 Jugar.xbf
 MainPage.xbf
 View\ContentDialog1.xbf
+View\ContentDialog2.xbf
 View\IntroView.xbf
 View\LevelView.xbf
 View\UI_Casella.xbf

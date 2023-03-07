@@ -28,22 +28,25 @@
             </Grid.RowDefinitions>
 
             <!--Actiu o No ACtiu-->
-            <CheckBox IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
+            <CheckBox x:ConnectionId='2' x:Name="chEstat"   IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
 
 
             <!--Nom del Nivell-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox x:ConnectionId='2' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:ConnectionId='3' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text del NIvell-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='3' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox x:ConnectionId='4' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
             <!--Temps del NIvell-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='4' Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" x:Name="txbTemps"  Width="200" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
-
+            <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
+                <ComboBox x:ConnectionId='11' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='12' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='13' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
+            </StackPanel>
             <!--Imatge del Nivell-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
             <TextBox x:ConnectionId='5' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
@@ -58,6 +61,16 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Grid.Row="4" Grid.Column="0">
+                <Button x:ConnectionId='9' x:Name="btnCrearNIvell"                             >Crear</Button>
+
+            </StackPanel>
+
+           
+            
+            
 
             <Grid Grid.Column="1" Grid.Row="7">
                 <Grid x:ConnectionId='8' x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue">

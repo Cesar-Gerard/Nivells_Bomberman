@@ -38,21 +38,9 @@ namespace ConnexioBD
                     using (var comanda = connection.CreateCommand())
                     {
 
-                        comanda.CommandText = @"select max(id) as id from introduccio";
-
-                        DbDataReader reader = comanda.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            last_id = reader.GetInt32(reader.GetOrdinal("id"));
-
-                        }
-                           
-                        last_id++;
-
-                        reader.Close();
-                        comanda.CommandText = @"insert into introduccio(id,intro_nom,intro_desc,hores,minuts,segons,intro_imatge,estat) values(@idBD,@intro_nom,@intro_desc,@hores,@minuts,@segons,@intro_imatge,@estat)";
-                        DBUtils.afegirParametre(comanda, "idBD", last_id, DbType.Int32);
+                       
+                        comanda.CommandText = @"insert into introduccio(intro_nom,intro_desc,hores,minuts,segons,intro_imatge,estat) values(@intro_nom,@intro_desc,@hores,@minuts,@segons,@intro_imatge,@estat)";
+                       
                         DBUtils.afegirParametre(comanda, "intro_nom", entrada.Nom, DbType.String);
                         DBUtils.afegirParametre(comanda, "intro_desc", entrada.Descripcio, DbType.String);
                         DBUtils.afegirParametre(comanda, "hores", entrada.Hores, DbType.Int32);
@@ -115,7 +103,50 @@ namespace ConnexioBD
 
 
 
+        public static Boolean eliminarIntro(Intro entrada)
+        {
+            DbTransaction transaccio = null;
+            try
+            {
+                using (MySQLDbContext context = new MySQLDbContext())
+                {
+                    using (var connection = context.Database.GetDbConnection())
+                    {
+                        connection.Open();
 
+                        transaccio = connection.BeginTransaction();
+                        using (var comanda = connection.CreateCommand())
+                        {
+
+                            comanda.CommandText =
+                                "delete from introduccio where intro_nom=@intro_nom";
+                            //-----------------------------------------------
+                            //    IMPORTANT !!! posem la comanda dins de la transacció
+                            //-----------------------------------------------
+                            comanda.Transaction = transaccio; //
+                            //-----------------------------------------------
+                            DBUtils.afegirParametre(comanda, "intro_nom", entrada.Nom, DbType.String);
+                            int liniesAfectades = comanda.ExecuteNonQuery();
+                            if (liniesAfectades != 1)
+                            {
+                                transaccio.Rollback();
+
+                            }
+                            else
+                            {
+                                transaccio.Commit();
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR" + ex);
+            }
+            return false;
+        }
 
 
 

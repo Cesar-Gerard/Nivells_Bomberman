@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -75,6 +76,8 @@ namespace Bomberman_Practica.View
         {
             //Carreguem les imatges dels elements disponibles 
             lsvBlocs.ItemsSource = Casella.llistacasellas();
+
+            carregarComboTemps();
         }
 
 
@@ -118,5 +121,51 @@ namespace Bomberman_Practica.View
         {
             pregunta_Item();
         }
+
+        private void btnCrearNIvell_Click(object sender, RoutedEventArgs e)
+        {
+
+            String nom = txbNom.Text;
+            String des = txbDesc.Text;
+            int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
+            int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());
+            int segons = Int32.Parse(cbmSegons.SelectedItem.ToString());
+            String imatge = "";
+            bool estat = false;
+
+            if (chEstat.IsChecked == true)
+            {
+                estat = true;
+            }
+            else
+            {
+                estat = false;
+            }
+
+
+
+            Level nou = new Level(nom, des, hores, minuts, segons, estat, imatge);
+
+            Level.InserirNivell(nou);
+
+        }
+
+
+        private void carregarComboTemps()
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                cbmHores.Items.Add(i);
+                cbmMinuts.Items.Add(i);
+                cbmSegons.Items.Add(i);
+            }
+
+            cbmHores.SelectedItem = 0; cbmMinuts.SelectedItem = 0; cbmSegons.SelectedItem = 0;
+        }
+
+
+
+
+
     }
 }

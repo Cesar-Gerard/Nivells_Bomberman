@@ -9,6 +9,7 @@
     d:DesignHeight="500"
     d:DesignWidth="400"
     Loaded="UserControl_Loaded"
+    x:Name="introview"
     >
 
     
@@ -35,7 +36,7 @@
 
             <!--Nom de la Intro-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox  Text="{Binding ElementName=introview, Path=info.Nom}"   FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text de la Intro-->

@@ -21,6 +21,8 @@ using System.ServiceModel.Channels;
 using Windows.UI.Popups;
 using static System.Net.Mime.MediaTypeNames;
 using ConnexioBD;
+using System.Reflection.Metadata.Ecma335;
+using Microsoft.Graphics.Canvas;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -36,7 +38,7 @@ namespace Bomberman_Practica.View
         public IntroView()
         {
             this.InitializeComponent();
-            
+
         }
 
 
@@ -138,6 +140,9 @@ namespace Bomberman_Practica.View
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             carregarComboTemps();
+
+
+           
             
         }
 
@@ -170,6 +175,10 @@ namespace Bomberman_Practica.View
                 temps.Add(Int32.Parse(cbmSegons.SelectedItem.ToString()));
             return temps;
         }
+
+
+
+
 
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
@@ -206,7 +215,22 @@ namespace Bomberman_Practica.View
 
         }
 
+        public Intro LamevaIntro { get; set; }
 
         
+
+        
+
+        public Intro info
+        {
+            get { return (Intro)GetValue(infoProperty); }
+            set { SetValue(infoProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for info.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty infoProperty =
+            DependencyProperty.Register("info", typeof(Intro), typeof(Intro), new PropertyMetadata(null));
+
+
     }
 }

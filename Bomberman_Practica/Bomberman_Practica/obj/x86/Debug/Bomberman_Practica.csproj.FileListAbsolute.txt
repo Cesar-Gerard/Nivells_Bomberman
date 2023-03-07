@@ -173,3 +173,8 @@ D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\FxResources.System.Configuration.ConfigurationManager.SR.resw
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\FxResources.System.Security.Cryptography.ProtectedData.SR.resw
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.g.i.cs
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.g.cs
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.xaml
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.xbf
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog2.xbf

@@ -142,6 +142,9 @@
     <Compile Include="View\ContentDialog1.xaml.cs">
       <DependentUpon>ContentDialog1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ContentDialog2.xaml.cs">
+      <DependentUpon>ContentDialog2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IntroView.xaml.cs">
       <DependentUpon>IntroView.xaml</DependentUpon>
     </Compile>
@@ -197,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ContentDialog2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\IntroView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,7 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConnexioBD\ConnexioBD.csproj">
-      <Project>{f8dcb1ff-0338-4295-aca4-811a84b0ec30}</Project>
+      <Project>{b8b0d91b-7279-40ec-abad-535ab01e41d2}</Project>
       <Name>ConnexioBD</Name>
     </ProjectReference>
   </ItemGroup>

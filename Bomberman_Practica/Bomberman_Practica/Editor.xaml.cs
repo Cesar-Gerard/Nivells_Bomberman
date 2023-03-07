@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using ConnexioBD;
 using Bomberman_Practica.View;
 using Microsoft.EntityFrameworkCore.Internal;
+using Windows.UI.Popups;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,7 +27,8 @@ namespace Bomberman_Practica
     public sealed partial class Editor : Page
     {
 
-        List<Level> llista = null;
+        List<Level> nivells = ConnexioBD.Level.getNivell();
+        List<Level> intro = ConnexioBD.Intro.getIntro();
 
         public Editor()
         {
@@ -36,7 +38,8 @@ namespace Bomberman_Practica
         private void rdoNivellLloc_Click(object sender, RoutedEventArgs e)
         {
            
-
+            
+            
             Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
             Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
@@ -46,11 +49,28 @@ namespace Bomberman_Practica
         private void GRDLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            if (GRDLevel.SelectedItem.GetType().Name == "Intro")
+            
+
+
+            if (GRDLevel.SelectedItem == null)
+            {
+                return;
+            }
+
+
+
+            if (GRDLevel.SelectedItem.GetType().Name=="Intro")
             {
                 rdoIntro.IsChecked = true;
+                Intro.LamevaIntro = (Intro)GRDLevel.SelectedItem;
                 Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
                 Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+                
+
+                
+                
+               
             }
             else if(GRDLevel.SelectedItem.GetType().Name == "Level")
             {
@@ -66,16 +86,73 @@ namespace Bomberman_Practica
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
+            obtenir_intro_nivell();
+            
+
+                
+        }
+
+        public void obtenir_intro_nivell()
+        {
             List<Level> nivells = ConnexioBD.Level.getNivell();
             List<Level> intro = ConnexioBD.Intro.getIntro();
             nivells.AddRange(intro);
 
 
-
             GRDLevel.ItemsSource = nivells;// ConnexioBD.Intro.getIntro();
-            
 
-                
+        }
+
+        private void btnRefrescar_Click(object sender, RoutedEventArgs e)
+        {
+           
+            
+            obtenir_intro_nivell();
+            
+        }
+
+
+
+        private void btnRepresentar_Click(object sender, RoutedEventArgs e)
+        {
+
+           
+
+
+
+        }
+
+        private void btnEsborrar_Click(object sender, RoutedEventArgs e)
+        {
+            if (GRDLevel.SelectedItem == null)
+            {
+                var messageDialog = new MessageDialog("Has de seleccionar un element de la llista per eliminar");
+                messageDialog.ShowAsync();
+            }
+
+
+
+            else if (GRDLevel.SelectedItem.GetType().Name == "Intro")
+            {
+
+                Intro eliminar = (Intro) GRDLevel.SelectedItem;
+
+                ConnexioBD.Intro.eliminarIntro(eliminar);
+
+
+
+            }
+            else if (GRDLevel.SelectedItem.GetType().Name == "Level")
+            {
+                Level eliminar = (Level)GRDLevel.SelectedItem;
+
+                ConnexioBD.Level.eliminarLevel(eliminar);
+            }
+
+
+            obtenir_intro_nivell();
+
+
         }
     }
 }
