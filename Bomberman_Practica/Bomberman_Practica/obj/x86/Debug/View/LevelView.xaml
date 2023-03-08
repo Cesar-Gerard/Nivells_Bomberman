@@ -43,9 +43,9 @@
             <!--Temps del NIvell-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
             <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
-                <ComboBox x:ConnectionId='11' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='12' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='13' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='12' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='13' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='14' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
             </StackPanel>
             <!--Imatge del Nivell-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
@@ -64,8 +64,8 @@
 
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Grid.Row="4" Grid.Column="0">
-                <Button x:ConnectionId='9' x:Name="btnCrearNIvell"                             >Crear</Button>
-
+                <Button x:ConnectionId='9' x:Name="btnCrearNIvell"                              Margin="10,10,10,10">Crear</Button>
+                <Button x:ConnectionId='10' x:Name="btnCrearImatge"                              Margin="10,10,10,10">Guardar imatge</Button>
             </StackPanel>
 
            

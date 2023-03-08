@@ -8,7 +8,6 @@
     <RootPropertyPathName Name="Descripcio" />
     <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="UI_Fons" />
-    <RootPropertyPathName Name="info" />
     <RootPropertyPathName Name="Seleccio" />
     <RootPropertyPathName Name="Img" />
     <RootPropertyPathName Name="MyProperty" />
@@ -173,12 +172,12 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="Text" />

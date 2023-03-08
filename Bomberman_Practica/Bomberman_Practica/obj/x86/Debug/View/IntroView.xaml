@@ -36,7 +36,7 @@
 
             <!--Nom de la Intro-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox x:ConnectionId='6'  Text="{Binding ElementName=introview, Path=info.Nom}"   FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:ConnectionId='6'  FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text de la Intro-->

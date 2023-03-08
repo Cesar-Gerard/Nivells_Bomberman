@@ -51,6 +51,9 @@ namespace ConnexioBD
 
                         Int32 filesInserides = comanda.ExecuteNonQuery();
 
+
+
+
                         return filesInserides == 1;
                     }
                 }
@@ -147,6 +150,52 @@ namespace ConnexioBD
             }
             return false;
         }
+
+
+
+
+        public static Boolean getNom(string nom)
+        {
+
+            string intro_nom = null;
+            List<Level> resultat = new List<Level>();
+            using (MySQLDbContext context = new MySQLDbContext())
+            {
+                using (var connection = context.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var comanda = connection.CreateCommand())
+                    {
+                        comanda.CommandText = @"select intro_nom from introduccio where intro_nom = @nom";
+                        DBUtils.afegirParametre(comanda, "nom", nom, DbType.String);
+
+
+                        DbDataReader reader = comanda.ExecuteReader();
+                        while (reader.Read())
+                        {
+                             intro_nom = reader.GetString(reader.GetOrdinal("intro_nom"));
+
+                        }
+
+
+                        if(intro_nom != null)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+
+                    }
+                }
+            }
+            
+        }
+
+
+
 
 
 

@@ -1,7 +1,9 @@
 ﻿using Bomberman_Practica.Model;
 using ConnexioBD;
+using SharpDX.WIC;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -9,8 +11,10 @@ using System.Security.Policy;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -76,7 +80,7 @@ namespace Bomberman_Practica.View
         {
             //Carreguem les imatges dels elements disponibles 
             lsvBlocs.ItemsSource = Casella.llistacasellas();
-
+            lsvBlocs.SelectedItem = lsvBlocs.Items.First();
             carregarComboTemps();
         }
 
@@ -162,6 +166,34 @@ namespace Bomberman_Practica.View
 
             cbmHores.SelectedItem = 0; cbmMinuts.SelectedItem = 0; cbmSegons.SelectedItem = 0;
         }
+
+        private void btnCrearImatge_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+        public Level ElmeuLevel { get; set; }
+
+
+
+        public void canviarText()
+        {
+            txbNom.Text = ElmeuLevel.Nom;
+            txbDesc.Text = ElmeuLevel.Descripcio;
+            txbImatge.Text = ElmeuLevel.Url;
+            cbmHores.SelectedItem = ElmeuLevel.Hores;
+            cbmMinuts.SelectedItem = ElmeuLevel.Minuts;
+            cbmSegons.SelectedItem = ElmeuLevel.Segons;
+
+        }
+
+
+
+
+
+
+
 
 
 

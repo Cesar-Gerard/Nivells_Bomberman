@@ -64,8 +64,8 @@
 
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Grid.Row="4" Grid.Column="0">
-                <Button x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click">Crear</Button>
-
+                <Button x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click" Margin="10,10,10,10">Crear</Button>
+                <Button x:Name="btnCrearImatge" Click="btnCrearImatge_Click" Margin="10,10,10,10">Guardar imatge</Button>
             </StackPanel>
 
            

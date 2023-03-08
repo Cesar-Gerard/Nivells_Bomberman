@@ -38,5 +38,11 @@ namespace Bomberman_Practica.View
             DependencyProperty.Register("Seleccio", typeof(Casella), typeof(UI_Casella), new PropertyMetadata(null));
 
 
+
+
+        
+
+
+
     }
 }

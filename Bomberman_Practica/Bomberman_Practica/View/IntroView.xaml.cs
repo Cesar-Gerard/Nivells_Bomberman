@@ -83,6 +83,13 @@ namespace Bomberman_Practica.View
 
                 var messageDialog = new MessageDialog("Has de seleccionar una imatge del buscador o fer servir la ja existent");
                 messageDialog.ShowAsync();
+
+                tmpBitmap = new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"));
+
+                imgfons.Source = tmpBitmap;
+                txbImatge.Text = "";
+
+
             }
             else
             {
@@ -140,9 +147,6 @@ namespace Bomberman_Practica.View
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             carregarComboTemps();
-
-
-           
             
         }
 
@@ -183,53 +187,87 @@ namespace Bomberman_Practica.View
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
 
-            BitmapImage bitMap = imgfons.Source as BitmapImage;
-            Uri uri = bitMap?.UriSource;
-
-
-            String nom=txbNom.Text;
-            String des=txbDesc.Text;
-            int hores=Int32.Parse(cbmHores.SelectedItem.ToString());
-            int minuts= Int32.Parse(cbmMinuts.SelectedItem.ToString()); 
-            int segons= Int32.Parse(cbmSegons.SelectedItem.ToString());
-            String imatge = uri.AbsolutePath; 
-            bool estat = false;
-
-            if (chEstat.IsChecked == true)
+            if (Intro.getNom(txbNom.Text))
             {
-                estat = true;
+                var messageDialog = new MessageDialog("No pots registrar una introducció ambun nom ja existent");
+                messageDialog.ShowAsync();
             }
             else
             {
-                estat = false;
+
+
+
+
+
+
+                BitmapImage bitMap = imgfons.Source as BitmapImage;
+                Uri uri = bitMap?.UriSource;
+
+
+                String nom = txbNom.Text;
+                String des = txbDesc.Text;
+                int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
+                int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());
+                int segons = Int32.Parse(cbmSegons.SelectedItem.ToString());
+                String imatge = uri.AbsolutePath;
+                bool estat = false;
+
+                if (chEstat.IsChecked == true)
+                {
+                    estat = true;
+                }
+                else
+                {
+                    estat = false;
+                }
+
+
+
+                Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
+
+                Intro.Inserir(nou);
+
             }
-           
-            
-
-            Intro nou = new Intro( nom, des,  hores, minuts, segons,  estat, imatge);
-
-            Intro.Inserir( nou );
-
-            
 
 
         }
 
         public Intro LamevaIntro { get; set; }
 
-        
 
-        
 
-        public Intro info
+        public void canviarText()
         {
-            get { return (Intro)GetValue(infoProperty); }
-            set { SetValue(infoProperty, value); }
+            txbNom.Text = LamevaIntro.Nom;
+            txbDesc.Text = LamevaIntro.Descripcio;
+            txbImatge.Text = LamevaIntro.Url;
+            cbmHores.SelectedItem = LamevaIntro.Hores;
+            cbmMinuts.SelectedItem = LamevaIntro.Minuts;
+            cbmSegons.SelectedItem = LamevaIntro.Segons;
+
+            if (LamevaIntro.Url.Contains("/Assets"))
+            {
+                BitmapImage pred = new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"));
+                imgfons.Source = pred;
+
+
+            }
+            else
+            {
+                BitmapImage imatge = new BitmapImage(new Uri(LamevaIntro.Url));
+                imgfons.Source = imatge;
+
+            }
+
+
+
+
+
         }
 
-        // Using a DependencyProperty as the backing store for info.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty infoProperty =
-            DependencyProperty.Register("info", typeof(Intro), typeof(Intro), new PropertyMetadata(null));
+        
+
+
 
 
     }

@@ -49,8 +49,6 @@ namespace Bomberman_Practica
         private void GRDLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            
-
 
             if (GRDLevel.SelectedItem == null)
             {
@@ -61,8 +59,11 @@ namespace Bomberman_Practica
 
             if (GRDLevel.SelectedItem.GetType().Name=="Intro")
             {
+
+               
                 rdoIntro.IsChecked = true;
                 Intro.LamevaIntro = (Intro)GRDLevel.SelectedItem;
+                Intro.canviarText();
                 Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
                 Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
@@ -76,6 +77,8 @@ namespace Bomberman_Practica
             {
 
                 rdoNivellLloc.IsChecked = true;
+                Level.ElmeuLevel = (Level)GRDLevel.SelectedItem;
+                Level.canviarText();
                 Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
                 Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             }

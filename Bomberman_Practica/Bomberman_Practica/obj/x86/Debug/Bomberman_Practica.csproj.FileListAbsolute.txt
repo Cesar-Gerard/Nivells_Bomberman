@@ -178,3 +178,14 @@ D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.xaml
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\View\ContentDialog2.xbf
 D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog2.xbf
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.pdb
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.Direct2D1.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.Direct2D1.pdb
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.DXGI.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\SharpDX.DXGI.pdb
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\System.Drawing.Common.dll
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\SharpDX.pri.xml
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\SharpDX.Direct2D1.pri.xml
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\SharpDX.DXGI.pri.xml
+D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw

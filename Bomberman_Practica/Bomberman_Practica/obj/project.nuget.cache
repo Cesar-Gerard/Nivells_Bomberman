@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tDt9M7mn1A4MAQ2hwAmiAliF3dZkP0f7ACn62aem7fBLjEQklSsauPaamgqlyGY14W3Bt6Xm/xho2NCs8I3xug==",
+  "dgSpecHash": "4oQ0zspU3e138vAK5rUsYibBdVRUcE+fV4QKg9giT+po76H/KV1RkpNFi+Oi8EJwItXg6yv+BcBOoOgdWVRN9A==",
   "success": true,
   "projectFilePath": "D:\\DAM\\DAM2\\Interficies\\Bomberman\\Bomberman_Practica\\Bomberman_Practica\\Bomberman_Practica.csproj",
   "expectedPackageFiles": [
@@ -96,6 +96,9 @@
     "C:\\Users\\gerar\\.nuget\\packages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.12\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\gerar\\.nuget\\packages\\sharpdx\\4.2.0\\sharpdx.4.2.0.nupkg.sha512",
+    "C:\\Users\\gerar\\.nuget\\packages\\sharpdx.direct2d1\\4.2.0\\sharpdx.direct2d1.4.2.0.nupkg.sha512",
+    "C:\\Users\\gerar\\.nuget\\packages\\sharpdx.dxgi\\4.2.0\\sharpdx.dxgi.4.2.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
@@ -106,6 +109,7 @@
     "C:\\Users\\gerar\\.nuget\\packages\\system.diagnostics.contracts\\4.3.0\\system.diagnostics.contracts.4.3.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\gerar\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\gerar\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",

@@ -1248,6 +1248,57 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -1387,6 +1438,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -3655,6 +3719,57 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -3790,6 +3905,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -6093,6 +6221,57 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -6228,6 +6407,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -8526,6 +8718,57 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -8661,6 +8904,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -10930,6 +11186,57 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -11065,6 +11372,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -13368,6 +13688,57 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -13503,6 +13874,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -15775,6 +16159,57 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -15910,6 +16345,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -18213,6 +18661,57 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {
+            "related": ".pdb;.pri"
+          }
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -18348,6 +18847,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         }
@@ -24880,6 +25392,78 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
+    "SharpDX/4.2.0": {
+      "sha512": "3pv0LFMvfK/dv1qISJnn8xBeeT6R/FRvr0EV4KI2DGsL84Qlv6P7isWqxGyU0LCwlSVCJN3jgHJ4Bl0KI2PJww==",
+      "type": "package",
+      "path": "sharpdx/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/.xml",
+        "lib/net40/SharpDX.dll",
+        "lib/net40/SharpDX.pdb",
+        "lib/net45/.xml",
+        "lib/net45/SharpDX.dll",
+        "lib/net45/SharpDX.pdb",
+        "lib/netstandard1.1/.xml",
+        "lib/netstandard1.1/SharpDX.dll",
+        "lib/netstandard1.1/SharpDX.pdb",
+        "lib/uap10.0/.xml",
+        "lib/uap10.0/SharpDX.dll",
+        "lib/uap10.0/SharpDX.pdb",
+        "lib/uap10.0/SharpDX.pri",
+        "sharpdx.4.2.0.nupkg.sha512",
+        "sharpdx.nuspec"
+      ]
+    },
+    "SharpDX.Direct2D1/4.2.0": {
+      "sha512": "Qs8LzDMaQf1u3KB8ArHu9pDv6itZ++QXs99a/bVAG+nKr0Hx5NG4mcN5vsfE0mVR2TkeHfeUm4PksRah6VUPtA==",
+      "type": "package",
+      "path": "sharpdx.direct2d1/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.Direct2D1.dll",
+        "lib/net40/SharpDX.Direct2D1.pdb",
+        "lib/net40/SharpDX.Direct2D1.xml",
+        "lib/net45/SharpDX.Direct2D1.dll",
+        "lib/net45/SharpDX.Direct2D1.pdb",
+        "lib/net45/SharpDX.Direct2D1.xml",
+        "lib/netstandard1.1/SharpDX.Direct2D1.dll",
+        "lib/netstandard1.1/SharpDX.Direct2D1.pdb",
+        "lib/netstandard1.1/SharpDX.Direct2D1.xml",
+        "lib/uap10.0/SharpDX.Direct2D1.dll",
+        "lib/uap10.0/SharpDX.Direct2D1.pdb",
+        "lib/uap10.0/SharpDX.Direct2D1.pri",
+        "lib/uap10.0/SharpDX.Direct2D1.xml",
+        "sharpdx.direct2d1.4.2.0.nupkg.sha512",
+        "sharpdx.direct2d1.nuspec"
+      ]
+    },
+    "SharpDX.DXGI/4.2.0": {
+      "sha512": "UjKqkgWc8U+SP+j3LBzFP6OB6Ntapjih7Xo+g1rLcsGbIb5KwewBrBChaUu7sil8rWoeVU/k0EJd3SMN4VqNZw==",
+      "type": "package",
+      "path": "sharpdx.dxgi/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.DXGI.dll",
+        "lib/net40/SharpDX.DXGI.pdb",
+        "lib/net40/SharpDX.DXGI.xml",
+        "lib/net45/SharpDX.DXGI.dll",
+        "lib/net45/SharpDX.DXGI.pdb",
+        "lib/net45/SharpDX.DXGI.xml",
+        "lib/netstandard1.1/SharpDX.DXGI.dll",
+        "lib/netstandard1.1/SharpDX.DXGI.pdb",
+        "lib/netstandard1.1/SharpDX.DXGI.xml",
+        "lib/uap10.0/SharpDX.DXGI.dll",
+        "lib/uap10.0/SharpDX.DXGI.pdb",
+        "lib/uap10.0/SharpDX.DXGI.pri",
+        "lib/uap10.0/SharpDX.DXGI.xml",
+        "sharpdx.dxgi.4.2.0.nupkg.sha512",
+        "sharpdx.dxgi.nuspec"
+      ]
+    },
     "System.Buffers/4.5.1": {
       "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "type": "package",
@@ -25359,6 +25943,43 @@
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Drawing.Common/7.0.0": {
+      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "type": "package",
+      "path": "system.drawing.common/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.xml",
+        "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.xml",
+        "lib/net7.0/System.Drawing.Common.dll",
+        "lib/net7.0/System.Drawing.Common.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
+        "system.drawing.common.7.0.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
@@ -27540,7 +28161,9 @@
       "ConnexioBD >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.12",
       "Microsoft.Toolkit.Uwp.UI.Controls >= 5.0.0",
-      "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid >= 5.0.0"
+      "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid >= 5.0.0",
+      "SharpDX.Direct2D1 >= 4.2.0",
+      "System.Drawing.Common >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -27598,6 +28221,14 @@
           "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "SharpDX.Direct2D1": {
+            "target": "Package",
+            "version": "[4.2.0, )"
+          },
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           }
         },
         "imports": [
