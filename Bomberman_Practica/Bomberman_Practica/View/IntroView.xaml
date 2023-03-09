@@ -41,7 +41,7 @@
 
             <!--Text de la Intro-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox   HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
 
             <!--Temps de la Intro-->
@@ -74,8 +74,8 @@
         <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
             <Image x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
         </Border>
-        
 
+        <Button HorizontalAlignment="Center" x:Name="btncancelar" Click="btncancelar_Click">Netejar</Button>
    
     </StackPanel>
     

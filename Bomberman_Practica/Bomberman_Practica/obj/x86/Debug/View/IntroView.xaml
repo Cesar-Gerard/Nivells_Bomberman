@@ -31,51 +31,51 @@
             </Grid.RowDefinitions>
 
             <!--Actiu o No ACtiu-->
-            <CheckBox x:ConnectionId='5' x:Name="chEstat" Grid.Row="0" Grid.Column="0"  IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
+            <CheckBox x:ConnectionId='6' x:Name="chEstat" Grid.Row="0" Grid.Column="0"  IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
             
 
             <!--Nom de la Intro-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox x:ConnectionId='6'  FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:ConnectionId='7'  FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text de la Intro-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='7'  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox x:ConnectionId='8'  TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
 
             <!--Temps de la Intro-->
             
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
             <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
-                <ComboBox x:ConnectionId='10' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='11' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='12' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='11' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='12' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='13' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
             </StackPanel>
             
             
 
                 <!--Imatge de la Intro-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='8' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
-            <Button x:ConnectionId='9' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                        >Browse</Button>
+            <TextBox x:ConnectionId='9' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <Button x:ConnectionId='10' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                        >Browse</Button>
 
        
         </Grid>
 
         <!--Preview de la Intro-->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="0">
-            <Button x:ConnectionId='3'  x:Name="btnPreview"  HorizontalAlignment="Center" Margin="10 10 10 10"                      >Preview</Button>
-            <Button x:ConnectionId='4' x:Name="btnCrear" HorizontalAlignment="Center" Margin="10 10 10 10"                        >Guardar Introduccio</Button>
+            <Button x:ConnectionId='4'  x:Name="btnPreview"  HorizontalAlignment="Center" Margin="10 10 10 10"                      >Preview</Button>
+            <Button x:ConnectionId='5' x:Name="btnCrear" HorizontalAlignment="Center" Margin="10 10 10 10"                        >Guardar Introduccio</Button>
         </StackPanel>
 
 
 
         <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
-            <Image x:ConnectionId='2' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
+            <Image x:ConnectionId='3' x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
         </Border>
-        
 
+        <Button x:ConnectionId='2' HorizontalAlignment="Center" x:Name="btncancelar"                          >Netejar</Button>
    
     </StackPanel>
     

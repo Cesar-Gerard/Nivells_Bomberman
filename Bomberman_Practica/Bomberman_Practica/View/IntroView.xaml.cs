@@ -187,18 +187,28 @@ namespace Bomberman_Practica.View
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
 
-            if (Intro.getNom(txbNom.Text))
+
+
+            int  hores = Int32.Parse(cbmHores.SelectedItem.ToString());;
+            int  minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());;
+            int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
+
+
+
+            if (Intro.getNom(txbNom.Text) || txbNom.Text=="")
             {
-                var messageDialog = new MessageDialog("No pots registrar una introducció ambun nom ja existent");
+                var messageDialog = new MessageDialog("No pots registrar una introducció amb un nom ja existent o que el nom estugui buit");
                 messageDialog.ShowAsync();
             }
+
+            else if (hores == 0 && minuts == 0 && segons == 0)
+            {
+                var messageDialog = new MessageDialog("No pots registrar una introducció amb una duració menor a 1 segon");
+                messageDialog.ShowAsync();
+            }
+
             else
             {
-
-
-
-
-
 
                 BitmapImage bitMap = imgfons.Source as BitmapImage;
                 Uri uri = bitMap?.UriSource;
@@ -206,9 +216,6 @@ namespace Bomberman_Practica.View
 
                 String nom = txbNom.Text;
                 String des = txbDesc.Text;
-                int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
-                int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());
-                int segons = Int32.Parse(cbmSegons.SelectedItem.ToString());
                 String imatge = uri.AbsolutePath;
                 bool estat = false;
 
@@ -222,9 +229,7 @@ namespace Bomberman_Practica.View
                 }
 
 
-
                 Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
-
                 Intro.Inserir(nou);
 
             }
@@ -244,6 +249,7 @@ namespace Bomberman_Practica.View
             cbmHores.SelectedItem = LamevaIntro.Hores;
             cbmMinuts.SelectedItem = LamevaIntro.Minuts;
             cbmSegons.SelectedItem = LamevaIntro.Segons;
+            chEstat.IsChecked = LamevaIntro.Actiu;
 
             if (LamevaIntro.Url.Contains("/Assets"))
             {
@@ -265,10 +271,23 @@ namespace Bomberman_Practica.View
 
         }
 
-        
+        private void btncancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+            txbNom.Text = "";
+            txbDesc.Text = "";
+            txbImatge.Text = "";
+            cbmHores.SelectedItem = cbmHores.Items.First();
+            cbmMinuts.SelectedItem = cbmMinuts.Items.First();
+            cbmSegons.SelectedItem = cbmSegons.Items.First();
+            chEstat.IsChecked = true;
 
 
 
+            BitmapImage pred = new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"));
+            imgfons.Source = pred;
 
+
+        }      
     }
 }

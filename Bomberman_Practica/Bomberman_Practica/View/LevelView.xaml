@@ -63,10 +63,10 @@
             </ListView>
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Grid.Row="4" Grid.Column="0">
-                <Button x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click" Margin="10,10,10,10">Crear</Button>
-                <Button x:Name="btnCrearImatge" Click="btnCrearImatge_Click" Margin="10,10,10,10">Guardar imatge</Button>
-            </StackPanel>
+           
+                <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click" Margin="10,10,10,10">Crear</Button>
+            <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" x:Name="btnCrearImatge" Click="btnCrearImatge_Click" Margin="10,10,10,10">Guardar imatge</Button>
+            
 
            
             
@@ -74,16 +74,13 @@
 
             <Grid Grid.Column="1" Grid.Row="7">
                 <Grid x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue">
-
                 </Grid>
                 
             </Grid>
-            
-
 
         </Grid>
 
-
+        <Button   HorizontalAlignment="Center" x:Name="btncancelar" Click="btncancelar_Click">Netejar</Button>
         
 
 

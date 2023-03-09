@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Policy;
+using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -128,29 +129,47 @@ namespace Bomberman_Practica.View
 
         private void btnCrearNIvell_Click(object sender, RoutedEventArgs e)
         {
+           int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
+           int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());
+           int segons = Int32.Parse(cbmSegons.SelectedItem.ToString());
 
-            String nom = txbNom.Text;
-            String des = txbDesc.Text;
-            int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
-            int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());
-            int segons = Int32.Parse(cbmSegons.SelectedItem.ToString());
-            String imatge = "";
-            bool estat = false;
 
-            if (chEstat.IsChecked == true)
+
+            if (Intro.getNom(txbNom.Text) || txbNom.Text == "")
             {
-                estat = true;
+                var messageDialog = new MessageDialog("No pots registrar un nivell amb un nom ja existent o que el nom estugui buit");
+                messageDialog.ShowAsync();
             }
+
+            else if (hores == 0 || minuts == 0 || segons == 0)
+            {
+                var messageDialog = new MessageDialog("No pots registrar un nivell amb una duració menor a 1 segon");
+                messageDialog.ShowAsync();
+            }
+
             else
             {
-                estat = false;
+
+
+                String nom = txbNom.Text;
+                String des = txbDesc.Text;
+                String imatge = "";
+                bool estat = false;
+
+                if (chEstat.IsChecked == true)
+                {
+                    estat = true;
+                }
+                else
+                {
+                    estat = false;
+                }
+
+
+                Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
+                Intro.Inserir(nou);
+
             }
-
-
-
-            Level nou = new Level(nom, des, hores, minuts, segons, estat, imatge);
-
-            Level.InserirNivell(nou);
 
         }
 
@@ -185,19 +204,22 @@ namespace Bomberman_Practica.View
             cbmHores.SelectedItem = ElmeuLevel.Hores;
             cbmMinuts.SelectedItem = ElmeuLevel.Minuts;
             cbmSegons.SelectedItem = ElmeuLevel.Segons;
+            chEstat.IsChecked = ElmeuLevel.Actiu;
 
         }
 
+        private void btncancelar_Click(object sender, RoutedEventArgs e)
+        {
+            txbNom.Text = "";
+            txbDesc.Text = "";
+            txbImatge.Text = "";
+            cbmHores.SelectedItem = cbmHores.Items.First();
+            cbmMinuts.SelectedItem = cbmMinuts.Items.First(); 
+            cbmSegons.SelectedItem = cbmSegons.Items.First();
+            chEstat.IsChecked = true;
+            lsvBlocs.SelectedItem = lsvBlocs.Items.First();
 
 
-
-
-
-
-
-
-
-
-
+        }
     }
 }
