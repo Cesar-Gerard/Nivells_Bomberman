@@ -1,12 +1,15 @@
 ﻿using Bomberman_Practica.Model;
 using ConnexioBD;
+using MySqlX.XDevAPI.Relational;
 using SharpDX.WIC;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization.Json;
 using System.Security.Policy;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
@@ -15,6 +18,7 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -43,7 +47,7 @@ namespace Bomberman_Practica.View
         
         private void carregarGrid()
         {
-            for(int i =0; i<20; i++)
+            for(int i =0; i<10; i++)
             {
                 grdNivell.ColumnDefinitions.Add(new ColumnDefinition());
                 grdNivell.RowDefinitions.Add(new RowDefinition());
@@ -55,7 +59,7 @@ namespace Bomberman_Practica.View
                 for(int x = 0; x < grdNivell.RowDefinitions.Count; x++)
                 {
                     UI_GRID casella = new UI_GRID(this);
-
+                    casella.Tag = 1;
                     
                     grdNivell.Children.Add(casella);
                     Grid.SetColumn(casella,x);
@@ -88,30 +92,6 @@ namespace Bomberman_Practica.View
 
 
 
-        
-
-
-        private async void btnImatge_Click_1(object sender, RoutedEventArgs e)
-        {
-            FileOpenPicker fp = new FileOpenPicker();
-            fp.FileTypeFilter.Add(".jpg");
-            fp.FileTypeFilter.Add(".png");
-
-            StorageFile sf = await fp.PickSingleFileAsync();
-            // Cerca la carpeta de dades de l'aplicació, dins de ApplicationData
-            var folder = ApplicationData.Current.LocalFolder;
-            // Dins de la carpeta de dades, creem una nova carpeta "icons"
-            var iconsFolder = await folder.CreateFolderAsync("icons", CreationCollisionOption.OpenIfExists);
-            // Creem un nom usant la data i hora, de forma que no poguem repetir noms.
-            string name = (DateTime.Now).ToString("yyyyMMddhhmmss") + "_" + sf.Name;
-            // Copiar l'arxiu triat a la carpeta indicada, usant el nom que hem muntat
-            StorageFile copiedFile = await sf.CopyAsync(iconsFolder, name);
-            // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
-            BitmapImage tmpBitmap = new BitmapImage(new Uri(copiedFile.Path));
-
-          
-            
-        }
 
         public Casella pregunta_Item()
         {
@@ -135,13 +115,13 @@ namespace Bomberman_Practica.View
 
 
 
-            if (Intro.getNom(txbNom.Text) || txbNom.Text == "")
+            if (Level.getNomNivell(txbNom.Text) || txbNom.Text == "")
             {
                 var messageDialog = new MessageDialog("No pots registrar un nivell amb un nom ja existent o que el nom estugui buit");
                 messageDialog.ShowAsync();
             }
 
-            else if (hores == 0 || minuts == 0 || segons == 0)
+            else if (hores == 0 && minuts == 0 && segons == 0)
             {
                 var messageDialog = new MessageDialog("No pots registrar un nivell amb una duració menor a 1 segon");
                 messageDialog.ShowAsync();
@@ -153,7 +133,6 @@ namespace Bomberman_Practica.View
 
                 String nom = txbNom.Text;
                 String des = txbDesc.Text;
-                String imatge = "";
                 bool estat = false;
 
                 if (chEstat.IsChecked == true)
@@ -166,8 +145,13 @@ namespace Bomberman_Practica.View
                 }
 
 
-                Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
-                Intro.Inserir(nou);
+                Level nou = new Level(nom, des, hores, minuts, segons, estat);
+                Level.InserirNivell(nou);
+                int id = Level.getIdLevel(nou.Nom);
+                nou.Id= id;
+                this.guardarBlocs(nou);
+
+                ConnexioEditor.obtenir_intro_nivell();
 
             }
 
@@ -186,25 +170,86 @@ namespace Bomberman_Practica.View
             cbmHores.SelectedItem = 0; cbmMinuts.SelectedItem = 0; cbmSegons.SelectedItem = 0;
         }
 
-        private void btnCrearImatge_Click(object sender, RoutedEventArgs e)
+
+        public void guardarBlocs(Level nou)
         {
-            
+            int i=0;
+            int j;
+            int x;
+            String nom = nou.Nom;
+            String resultat="";
+
+            for (j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+            {
+                for (x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                {
+
+                    UI_GRID fill= (UI_GRID)grdNivell.Children.ElementAt(i++);
+
+                    int num_casella =(int) fill.Tag;
+
+                    
+
+                    Level.guardarBlocs(nou.Id, x, j, num_casella);
+
+                }
+               
+            }
         }
+
+
+
+        public void UpdateBlocsNivell(Level actualitzat)
+        {
+            int i = 0;
+            int j;
+            int x;
+            String nom = actualitzat.Nom;
+            String resultat = "";
+
+
+            for (j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+            {
+                for (x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                {
+
+                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i++);
+
+                    int num_casella = (int)fill.Tag;
+
+                    
+
+                    Level.BlocsNivellUpdateBD(ElmeuLevel.Id, x, j, num_casella);
+
+                }
+
+            }
+        }
+
+
+
 
 
         public Level ElmeuLevel { get; set; }
 
-
+        public Editor ConnexioEditor { get; set; }
 
         public void canviarText()
         {
             txbNom.Text = ElmeuLevel.Nom;
             txbDesc.Text = ElmeuLevel.Descripcio;
-            txbImatge.Text = ElmeuLevel.Url;
             cbmHores.SelectedItem = ElmeuLevel.Hores;
             cbmMinuts.SelectedItem = ElmeuLevel.Minuts;
             cbmSegons.SelectedItem = ElmeuLevel.Segons;
             chEstat.IsChecked = ElmeuLevel.Actiu;
+
+
+            List<Casella> recuperar = new List<Casella>();
+
+            recuperar = Level.getBlocsNivell(ElmeuLevel.Id);
+            
+            omplirgraella(recuperar);
+
 
         }
 
@@ -212,7 +257,6 @@ namespace Bomberman_Practica.View
         {
             txbNom.Text = "";
             txbDesc.Text = "";
-            txbImatge.Text = "";
             cbmHores.SelectedItem = cbmHores.Items.First();
             cbmMinuts.SelectedItem = cbmMinuts.Items.First(); 
             cbmSegons.SelectedItem = cbmSegons.Items.First();
@@ -221,5 +265,113 @@ namespace Bomberman_Practica.View
 
 
         }
+
+        private void omplirgraella(List<Casella> recuperar)
+        {
+            int i = 0;
+
+            for (int j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+            {
+                for (int x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                {
+                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i);
+                    if (fill != null)
+                    {
+                        fill.rebre_casella(recuperar[i++]);
+                    }
+
+                }
+               
+            }
+
+
+
+        }
+
+
+
+
+        public Level actualitzarLevel()
+        {
+            Level actualitzat = null;
+
+            int hores = Int32.Parse(cbmHores.SelectedItem.ToString()); ;
+            int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString()); ;
+            int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
+
+
+
+            if (txbNom.Text == "")
+            {
+                var messageDialog = new MessageDialog("No pots registrar un nivell amb un nom buit");
+                messageDialog.ShowAsync();
+
+                return null;
+            }
+
+            else if (hores == 0 && minuts == 0 && segons == 0)
+            {
+                var messageDialog = new MessageDialog("No pots registrar un nivell amb una duració menor a 1 segon");
+                messageDialog.ShowAsync();
+
+                return null;
+            }
+
+            else
+            {
+
+
+                String nom = txbNom.Text;
+                String des = txbDesc.Text;
+                bool estat = false;
+
+                if (chEstat.IsChecked == true)
+                {
+                    estat = true;
+                }
+                else
+                {
+                    estat = false;
+                }
+
+
+                actualitzat = new Level(nom, des, hores, minuts, segons, estat);
+                actualitzat.Id = Level.getIdLevel(ElmeuLevel.Nom);
+
+
+                return actualitzat;
+            }
+           
+
+        }
+
+
+
+        private void btnActualitzar_Click(object sender, RoutedEventArgs e)
+        {
+            Level nou = actualitzarLevel();
+
+
+            if (nou != null)
+            {
+                if (Level.getNomNivell(nou.Nom))
+                {
+                    var messageDialog = new MessageDialog("No pots actualitzar la introducció actual amb el nom de una altre ja existent");
+                    messageDialog.ShowAsync();
+                }
+                else
+                {
+
+                    Level.UpdateLevel(nou, ElmeuLevel);
+                    this.UpdateBlocsNivell(nou); 
+
+                    ConnexioEditor.obtenir_intro_nivell();
+                }
+
+
+            }
+        }
+
+
     }
 }

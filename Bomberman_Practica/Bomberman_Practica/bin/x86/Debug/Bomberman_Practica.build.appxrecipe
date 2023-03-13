@@ -262,9 +262,6 @@
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog1.xbf">
       <PackagePath>View\ContentDialog1.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\ContentDialog2.xbf">
-      <PackagePath>View\ContentDialog2.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\bin\x86\Debug\View\IntroView.xbf">
       <PackagePath>View\IntroView.xbf</PackagePath>
     </AppxPackagedFile>

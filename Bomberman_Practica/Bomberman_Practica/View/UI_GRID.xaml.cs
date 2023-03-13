@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -58,8 +59,10 @@ namespace Bomberman_Practica.View
             Imatge_Item.DecodePixelWidth = (int) imgNIvell.ActualWidth;
 
             imgNIvell.Source = Imatge_Item;
-            
 
+
+            this.Tag = item.Id;
+          
         }
 
         private void UserControl_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -73,5 +76,23 @@ namespace Bomberman_Practica.View
         {
             bFonsNivell.Background = new SolidColorBrush(Colors.Transparent);
         }
+
+
+        public void rebre_casella(Casella entrada)
+        {
+            entrada.retornaImatgeString(entrada.Id);
+
+         
+
+            BitmapImage Imatge_Item = new BitmapImage(new Uri("ms-appx://" + entrada.Img));
+
+            Imatge_Item.DecodePixelHeight = (int)imgNIvell.ActualHeight;
+            Imatge_Item.DecodePixelWidth = (int)imgNIvell.ActualWidth;
+
+            imgNIvell.Source = Imatge_Item;
+            this.Tag = entrada.Id;
+        }
+
+
     }
 }

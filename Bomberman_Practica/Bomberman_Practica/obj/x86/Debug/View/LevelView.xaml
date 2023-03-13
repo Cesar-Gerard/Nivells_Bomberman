@@ -28,33 +28,29 @@
             </Grid.RowDefinitions>
 
             <!--Actiu o No ACtiu-->
-            <CheckBox x:ConnectionId='3' x:Name="chEstat"   IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
+            <CheckBox x:ConnectionId='4' x:Name="chEstat"   IsChecked="True" HorizontalAlignment="Center">Actiu:</CheckBox>
 
 
             <!--Nom del Nivell-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox x:ConnectionId='4' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:ConnectionId='5' FontSize="13" x:Name="txbNom" Text="" Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text del NIvell-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='5' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox x:ConnectionId='6' HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
             <!--Temps del NIvell-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" FontSize="15"><Run Text="Temps "/><Run Text=":"/></TextBlock>
             <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal">
-                <ComboBox x:ConnectionId='13' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='14' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
-                <ComboBox x:ConnectionId='15' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='11' x:Name="cbmHores" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='12' x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
+                <ComboBox x:ConnectionId='13' x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
             </StackPanel>
-            <!--Imatge del Nivell-->
-            <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
-            <TextBox x:ConnectionId='6' Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
-            <Button x:ConnectionId='7' x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center"                          >Browse</Button>
+           
 
 
-
-            <ListView x:ConnectionId='8' x:Name="lsvBlocs" Grid.Row="7" Width="200" HorizontalAlignment="Left"                                             >
+            <ListView x:ConnectionId='7' x:Name="lsvBlocs" Grid.Row="7" Width="200" HorizontalAlignment="Left"                                             >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <view:UI_Casella Seleccio="{Binding}"></view:UI_Casella>
@@ -63,24 +59,28 @@
             </ListView>
 
 
-           
-                <Button x:ConnectionId='9' Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" x:Name="btnCrearNIvell"                              Margin="10,10,10,10">Crear</Button>
-            <Button x:ConnectionId='10' Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" x:Name="btnCrearImatge"                              Margin="10,10,10,10">Guardar imatge</Button>
-            
 
-           
-            
-            
+            <Button x:ConnectionId='8' Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" x:Name="btnCrearNIvell"                              Margin="10,10,10,10">Crear</Button>
+
+
+
+
+
 
             <Grid Grid.Column="1" Grid.Row="7">
-                <Grid x:ConnectionId='11' x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue">
+                <Grid x:ConnectionId='9' x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue" >
                 </Grid>
                 
             </Grid>
 
         </Grid>
 
-        <Button x:ConnectionId='2'   HorizontalAlignment="Center" x:Name="btncancelar"                          >Netejar</Button>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:ConnectionId='2' x:Name="btncancelar"                           Margin="10,10,10,10">Netejar</Button>
+            <Button x:ConnectionId='3' x:Name="btnActualitzar"                             >Actualitzar</Button>
+        </StackPanel>
+        
         
 
 

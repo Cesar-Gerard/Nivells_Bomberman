@@ -142,12 +142,10 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="SecondaryButtonText" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Title" />
       <RootEvent Name="SecondaryButtonClick" />
       <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Bomberman_Practica.View.ContentDialog1" />
-    <RootType FullName="Bomberman_Practica.View.ContentDialog2" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />
@@ -177,7 +175,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">

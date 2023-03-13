@@ -16,6 +16,8 @@ using ConnexioBD;
 using Bomberman_Practica.View;
 using Microsoft.EntityFrameworkCore.Internal;
 using Windows.UI.Popups;
+using System.Collections.ObjectModel;
+using Org.BouncyCastle.Utilities;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,8 +29,8 @@ namespace Bomberman_Practica
     public sealed partial class Editor : Page
     {
 
-        List<Level> nivells = ConnexioBD.Level.getNivell();
-        List<Level> intro = ConnexioBD.Intro.getIntro();
+        ObservableCollection<Level> nivells = null;
+        ObservableCollection<Intro> intro = null;
 
         public Editor()
         {
@@ -42,6 +44,10 @@ namespace Bomberman_Practica
             
             Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
             Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            Intro.ConnexioEditro = this;
+            Level.ConnexioEditor = this;
+
 
             
         }
@@ -64,6 +70,7 @@ namespace Bomberman_Practica
                 rdoIntro.IsChecked = true;
                 Intro.LamevaIntro = (Intro)GRDLevel.SelectedItem;
                 Intro.canviarText();
+                Intro.ConnexioEditro = this;
                 Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
                 Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
@@ -79,6 +86,7 @@ namespace Bomberman_Practica
                 rdoNivellLloc.IsChecked = true;
                 Level.ElmeuLevel = (Level)GRDLevel.SelectedItem;
                 Level.canviarText();
+                Level.ConnexioEditor = this;
                 Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
                 Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             }
@@ -95,35 +103,30 @@ namespace Bomberman_Practica
                 
         }
 
+
+        
+        
+
         public void obtenir_intro_nivell()
         {
-            List<Level> nivells = ConnexioBD.Level.getNivell();
-            List<Level> intro = ConnexioBD.Intro.getIntro();
-            nivells.AddRange(intro);
+            nivells = ConnexioBD.Level.getNivell();
+            intro = ConnexioBD.Intro.getIntro();
+            
+
+            foreach (var item in intro)
+            {
+                nivells.Add(item);
+            }
 
 
             GRDLevel.ItemsSource = nivells;// ConnexioBD.Intro.getIntro();
 
         }
 
-        private void btnRefrescar_Click(object sender, RoutedEventArgs e)
-        {
-           
-            
-            obtenir_intro_nivell();
-            
-        }
+        
 
 
 
-        private void btnRepresentar_Click(object sender, RoutedEventArgs e)
-        {
-
-           
-
-
-
-        }
 
         private void btnEsborrar_Click(object sender, RoutedEventArgs e)
         {
@@ -149,12 +152,21 @@ namespace Bomberman_Practica
             {
                 Level eliminar = (Level)GRDLevel.SelectedItem;
 
+
+                ConnexioBD.Level.DeleteBlocsNivell(eliminar.Id);
+
                 ConnexioBD.Level.eliminarLevel(eliminar);
+                
             }
 
 
             obtenir_intro_nivell();
 
+            if (nivells.Count > 0)
+            {
+
+                GRDLevel.SelectedItem = nivells[0];
+            }
 
         }
     }

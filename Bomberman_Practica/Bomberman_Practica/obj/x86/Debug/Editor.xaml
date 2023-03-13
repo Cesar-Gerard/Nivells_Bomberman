@@ -88,9 +88,7 @@
             <StackPanel Orientation="Horizontal">
                 <RadioButton x:ConnectionId='6' x:Name="rdoNivellLloc"                            >Nivell</RadioButton>
                 <RadioButton x:ConnectionId='7' x:Name="rdoIntro"                            >Intro</RadioButton>
-                <Button x:ConnectionId='8' x:Name="btnRefrescar"                            Margin="10,10,10,10">Refrescar</Button>
-                <Button x:ConnectionId='9' x:Name="btnRepresentar"                              Margin="10,10,10,10">Representar</Button>
-                <Button x:ConnectionId='10' x:Name="btnEsborrar"                           Margin="10,10,10,10">Eliminar seleccionat</Button>
+                <Button x:ConnectionId='8' x:Name="btnEsborrar"                           Margin="10,10,10,10">Eliminar seleccionat</Button>
             </StackPanel>
 
             

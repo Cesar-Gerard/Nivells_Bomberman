@@ -23,15 +23,18 @@ using static System.Net.Mime.MediaTypeNames;
 using ConnexioBD;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.Graphics.Canvas;
+using System.Drawing;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Bomberman_Practica.View
 {
-    
+   
 
     public sealed partial class IntroView : UserControl
     {
+
+       
         BitmapImage tmpBitmap = null;
 
 
@@ -93,7 +96,8 @@ namespace Bomberman_Practica.View
             }
             else
             {
-                string name = (DateTime.Now).ToString("yyyyMMddhhmmss") + "_" + sf.Name;
+                string name = (DateTime.Now).ToString("yyyyMMddhhmmss") + "_" +  sf.Name;
+                name = name.Replace(" ", "");
                 // Copiar l'arxiu triat a la carpeta indicada, usant el nom que hem muntat
                 StorageFile copiedFile = await sf.CopyAsync(iconsFolder, name);
                 // Crear una imatge en memòria (BitmapImage) a partir de l'arxiu copiat a ApplicationData
@@ -187,24 +191,42 @@ namespace Bomberman_Practica.View
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
 
+                Intro nou= inserirIntro();
+
+            if(nou != null)
+            {
+                Intro.Inserir(nou);
+
+                ConnexioEditro.obtenir_intro_nivell();
+            }
+        }
 
 
-            int  hores = Int32.Parse(cbmHores.SelectedItem.ToString());;
-            int  minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString());;
+
+        public Intro inserirIntro()
+        {
+
+
+            int hores = Int32.Parse(cbmHores.SelectedItem.ToString()); ;
+            int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString()); ;
             int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
 
 
 
-            if (Intro.getNom(txbNom.Text) || txbNom.Text=="")
+            if (Intro.getNom(txbNom.Text) || txbNom.Text == "")
             {
                 var messageDialog = new MessageDialog("No pots registrar una introducció amb un nom ja existent o que el nom estugui buit");
                 messageDialog.ShowAsync();
+
+                return null;
             }
 
             else if (hores == 0 && minuts == 0 && segons == 0)
             {
                 var messageDialog = new MessageDialog("No pots registrar una introducció amb una duració menor a 1 segon");
                 messageDialog.ShowAsync();
+
+                return null;
             }
 
             else
@@ -230,12 +252,82 @@ namespace Bomberman_Practica.View
 
 
                 Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
-                Intro.Inserir(nou);
+                int id=Intro.getIdIntro(nou);
 
+                nou.Id = id;
+                return nou;
             }
 
 
         }
+
+
+
+
+
+        public Intro actualitzarIntro()
+        {
+
+
+                int hores = Int32.Parse(cbmHores.SelectedItem.ToString()); ;
+                int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString()); ;
+                int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
+
+
+
+                if ( txbNom.Text == "")
+                {
+                    var messageDialog = new MessageDialog("No pots registrar una introducció amb un nom buit");
+                    messageDialog.ShowAsync();
+
+                    return null;
+                }
+
+                else if (hores == 0 && minuts == 0 && segons == 0)
+                {
+                    var messageDialog = new MessageDialog("No pots registrar una introducció amb una duració menor a 1 segon");
+                    messageDialog.ShowAsync();
+
+                    return null;
+                }
+
+                else
+                {
+
+                    BitmapImage bitMap = imgfons.Source as BitmapImage;
+                    Uri uri = bitMap?.UriSource;
+
+                   
+                    String nom = txbNom.Text;
+                    String des = txbDesc.Text;
+                    String imatge = uri.AbsolutePath;
+                    bool estat = false;
+
+                    if (chEstat.IsChecked == true)
+                    {
+                        estat = true;
+                    }
+                    else
+                    {
+                        estat = false;
+                    }
+
+
+                    Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
+
+
+                    return nou;
+                }
+
+
+        }
+
+        
+
+
+
+
+        public Editor ConnexioEditro { get; set; }
 
         public Intro LamevaIntro { get; set; }
 
@@ -267,8 +359,6 @@ namespace Bomberman_Practica.View
 
 
 
-
-
         }
 
         private void btncancelar_Click(object sender, RoutedEventArgs e)
@@ -288,6 +378,28 @@ namespace Bomberman_Practica.View
             imgfons.Source = pred;
 
 
-        }      
+        }
+
+        private void btnActualitzar_Click(object sender, RoutedEventArgs e)
+        {
+            Intro actualitzar = actualitzarIntro();
+
+            if (actualitzar != null)
+            {
+                if (Intro.getNom(actualitzar.Nom))
+                {
+                    var messageDialog = new MessageDialog("No pots actualitzar la introducció actual amb el nom de una altre ja existent");
+                    messageDialog.ShowAsync();
+                }
+                else
+                {
+
+                    Intro.Update(actualitzar, LamevaIntro);
+                    ConnexioEditro.obtenir_intro_nivell();
+                }
+
+
+            } 
+        }
     }
 }

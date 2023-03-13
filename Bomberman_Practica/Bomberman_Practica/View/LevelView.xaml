@@ -47,11 +47,7 @@
                 <ComboBox x:Name="cbmMinuts" Margin="10 10 0 10" FontSize="13"></ComboBox>
                 <ComboBox x:Name="cbmSegons" Margin="10 10 0 10" FontSize="13"></ComboBox>
             </StackPanel>
-            <!--Imatge del Nivell-->
-            <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
-            <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
-            <Button x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="btnImatge_Click_1">Browse</Button>
-
+           
 
 
             <ListView x:Name="lsvBlocs" Grid.Row="7" Width="200" HorizontalAlignment="Left" SelectionChanged="lsvBlocs_SelectionChanged">
@@ -63,24 +59,28 @@
             </ListView>
 
 
-           
-                <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click" Margin="10,10,10,10">Crear</Button>
-            <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" x:Name="btnCrearImatge" Click="btnCrearImatge_Click" Margin="10,10,10,10">Guardar imatge</Button>
-            
 
-           
-            
-            
+            <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" x:Name="btnCrearNIvell" Click="btnCrearNIvell_Click" Margin="10,10,10,10">Crear</Button>
+
+
+
+
+
 
             <Grid Grid.Column="1" Grid.Row="7">
-                <Grid x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue">
+                <Grid x:Name="grdNivell"  HorizontalAlignment="Left" Width="250" Height="250" Background="AliceBlue" >
                 </Grid>
                 
             </Grid>
 
         </Grid>
 
-        <Button   HorizontalAlignment="Center" x:Name="btncancelar" Click="btncancelar_Click">Netejar</Button>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btncancelar" Click="btncancelar_Click" Margin="10,10,10,10">Netejar</Button>
+            <Button x:Name="btnActualitzar" Click="btnActualitzar_Click">Actualitzar</Button>
+        </StackPanel>
+        
         
 
 

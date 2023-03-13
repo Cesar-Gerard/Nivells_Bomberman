@@ -67,6 +67,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="0">
             <Button  x:Name="btnPreview"  HorizontalAlignment="Center" Margin="10 10 10 10" Click="Button_Click" >Preview</Button>
             <Button x:Name="btnCrear" HorizontalAlignment="Center" Margin="10 10 10 10" Click="btnCrear_Click" >Guardar Introduccio</Button>
+            
         </StackPanel>
 
 
@@ -75,7 +76,10 @@
             <Image x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
         </Border>
 
-        <Button HorizontalAlignment="Center" x:Name="btncancelar" Click="btncancelar_Click">Netejar</Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btncancelar" Click="btncancelar_Click" Margin="10,10,10,10">Netejar</Button>
+            <Button x:Name="btnActualitzar" Click="btnActualitzar_Click">Actualitzar</Button>
+        </StackPanel>
    
     </StackPanel>
     

@@ -88,8 +88,6 @@
             <StackPanel Orientation="Horizontal">
                 <RadioButton x:Name="rdoNivellLloc" Click="rdoNivellLloc_Click">Nivell</RadioButton>
                 <RadioButton x:Name="rdoIntro" Click="rdoNivellLloc_Click">Intro</RadioButton>
-                <Button x:Name="btnRefrescar" Click="btnRefrescar_Click" Margin="10,10,10,10">Refrescar</Button>
-                <Button x:Name="btnRepresentar" Click="btnRepresentar_Click" Margin="10,10,10,10">Representar</Button>
                 <Button x:Name="btnEsborrar" Click="btnEsborrar_Click" Margin="10,10,10,10">Eliminar seleccionat</Button>
             </StackPanel>
 
