@@ -196,7 +196,7 @@ namespace Bomberman_Practica.View
             if(nou != null)
             {
                 Intro.Inserir(nou);
-
+                netejarInfo();
                 ConnexioEditro.obtenir_intro_nivell();
             }
         }
@@ -258,7 +258,7 @@ namespace Bomberman_Practica.View
                 return nou;
             }
 
-
+            
         }
 
 
@@ -318,7 +318,7 @@ namespace Bomberman_Practica.View
 
                     return nou;
                 }
-
+            
 
         }
 
@@ -361,9 +361,10 @@ namespace Bomberman_Practica.View
 
         }
 
-        private void btncancelar_Click(object sender, RoutedEventArgs e)
-        {
 
+
+        public void netejarInfo()
+        {
             txbNom.Text = "";
             txbDesc.Text = "";
             txbImatge.Text = "";
@@ -376,7 +377,11 @@ namespace Bomberman_Practica.View
 
             BitmapImage pred = new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"));
             imgfons.Source = pred;
+        }
 
+        private void btncancelar_Click(object sender, RoutedEventArgs e)
+        {
+            netejarInfo();
 
         }
 
@@ -386,7 +391,7 @@ namespace Bomberman_Practica.View
 
             if (actualitzar != null)
             {
-                if (Intro.getNom(actualitzar.Nom))
+                if (Intro.getNom(actualitzar.Nom) && Intro.getIdIntro(actualitzar) != LamevaIntro.Id)
                 {
                     var messageDialog = new MessageDialog("No pots actualitzar la introducció actual amb el nom de una altre ja existent");
                     messageDialog.ShowAsync();
@@ -395,6 +400,7 @@ namespace Bomberman_Practica.View
                 {
 
                     Intro.Update(actualitzar, LamevaIntro);
+                    netejarInfo();
                     ConnexioEditro.obtenir_intro_nivell();
                 }
 

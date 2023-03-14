@@ -144,7 +144,7 @@ namespace Bomberman_Practica
                 Intro eliminar = (Intro) GRDLevel.SelectedItem;
 
                 ConnexioBD.Intro.eliminarIntro(eliminar);
-
+                Intro.netejarInfo();
 
 
             }
@@ -156,11 +156,13 @@ namespace Bomberman_Practica
                 ConnexioBD.Level.DeleteBlocsNivell(eliminar.Id);
 
                 ConnexioBD.Level.eliminarLevel(eliminar);
+                Level.netejarInfoLevel();
                 
             }
 
 
             obtenir_intro_nivell();
+            
 
             if (nivells.Count > 0)
             {

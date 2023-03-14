@@ -205,6 +205,9 @@
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\enemy.png">
       <PackagePath>Assets\enemy.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\finsih_point.png">
+      <PackagePath>Assets\finsih_point.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\fons_grid.png">
       <PackagePath>Assets\fons_grid.png</PackagePath>
     </AppxPackagedFile>
@@ -213,6 +216,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\soft.png">
       <PackagePath>Assets\soft.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\start_point.png">
+      <PackagePath>Assets\start_point.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DAM\DAM2\Interficies\Bomberman\Bomberman_Practica\Bomberman_Practica\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

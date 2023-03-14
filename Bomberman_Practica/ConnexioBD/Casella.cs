@@ -47,6 +47,8 @@ namespace Bomberman_Practica.Model
             resultat.Add(new Casella("Indestructible", "/Assets/indestructible.png",2));
             resultat.Add(new Casella("Destructible", "/Assets/soft.png",3));
             resultat.Add(new Casella("Enemic", "/Assets/enemy.png",4));
+            resultat.Add(new Casella("Inici", "/Assets/start_point.png",5));
+            resultat.Add(new Casella("Final", "/Assets/finsih_point.png",6));
 
             return resultat;
         }
@@ -81,6 +83,16 @@ namespace Bomberman_Practica.Model
 
                 case 4:
                     resultat = "/Assets/enemy.png";
+                    this.img = resultat;
+                    break; 
+
+                case 5:
+                    resultat = "/Assets/start_point.png";
+                    this.img = resultat;
+                    break; 
+
+                case 6:
+                    resultat = "/Assets/finsih_point.png";
                     this.img = resultat;
                     break;
 

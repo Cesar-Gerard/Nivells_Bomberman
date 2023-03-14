@@ -37,10 +37,16 @@ namespace Bomberman_Practica.View
    
     public sealed partial class LevelView : UserControl
     {
+        int start_point;
+        int finish_point;
+
         public LevelView()
         {
             this.InitializeComponent();
             carregarGrid();
+
+            start_point = 0; 
+            finish_point=0;
         }
 
         
@@ -95,10 +101,11 @@ namespace Bomberman_Practica.View
 
         public Casella pregunta_Item()
         {
-            Casella entrada =(Casella)lsvBlocs.SelectedItem;
-
+           
+            Casella seleccionat =(Casella)lsvBlocs.SelectedItem;
+            return seleccionat;
             
-            return entrada;
+            
         }
 
 
@@ -155,6 +162,7 @@ namespace Bomberman_Practica.View
 
             }
 
+            netejarInfoLevel();
         }
 
 
@@ -253,23 +261,32 @@ namespace Bomberman_Practica.View
 
         }
 
-        private void btncancelar_Click(object sender, RoutedEventArgs e)
+
+        public void netejarInfoLevel()
         {
             txbNom.Text = "";
             txbDesc.Text = "";
             cbmHores.SelectedItem = cbmHores.Items.First();
-            cbmMinuts.SelectedItem = cbmMinuts.Items.First(); 
+            cbmMinuts.SelectedItem = cbmMinuts.Items.First();
             cbmSegons.SelectedItem = cbmSegons.Items.First();
             chEstat.IsChecked = true;
             lsvBlocs.SelectedItem = lsvBlocs.Items.First();
 
+            netejargraella();
+
+            
+        }
+
+
+        private void btncancelar_Click(object sender, RoutedEventArgs e)
+        {
+            netejarInfoLevel();
 
         }
 
         private void omplirgraella(List<Casella> recuperar)
         {
             int i = 0;
-
             for (int j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
             {
                 for (int x = 0; x < grdNivell.RowDefinitions.Count; x++)
@@ -288,7 +305,24 @@ namespace Bomberman_Practica.View
 
         }
 
+        public void netejargraella()
+        {
+            int i = 0;
+            for (int j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+            {
+                for (int x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                {
+                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i);
+                    if (fill != null)
+                    {
+                        fill.rebre_casella(new Casella("","",1));
+                        i++;
+                    }
 
+                }
+
+            }
+        }
 
 
         public Level actualitzarLevel()
@@ -354,7 +388,7 @@ namespace Bomberman_Practica.View
 
             if (nou != null)
             {
-                if (Level.getNomNivell(nou.Nom))
+                if (Level.getNomNivell(nou.Nom) && Level.getIdLevel(nou.Nom)!=nou.Id)
                 {
                     var messageDialog = new MessageDialog("No pots actualitzar la introducció actual amb el nom de una altre ja existent");
                     messageDialog.ShowAsync();
@@ -363,8 +397,8 @@ namespace Bomberman_Practica.View
                 {
 
                     Level.UpdateLevel(nou, ElmeuLevel);
-                    this.UpdateBlocsNivell(nou); 
-
+                    this.UpdateBlocsNivell(nou );
+                    netejarInfoLevel();
                     ConnexioEditor.obtenir_intro_nivell();
                 }
 

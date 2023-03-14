@@ -2,6 +2,7 @@ WinMetadata\Windows.winmd
 Assets\back.png
 Assets\bomb.png
 Assets\enemy.png
+Assets\finsih_point.png
 Assets\fons_grid.png
 Assets\indestructible.png
 Assets\LockScreenLogo.scale-200.png
@@ -10,6 +11,7 @@ Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
+Assets\start_point.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
