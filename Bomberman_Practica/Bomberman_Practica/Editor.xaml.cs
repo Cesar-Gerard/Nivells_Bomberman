@@ -43,13 +43,18 @@ namespace Bomberman_Practica
             
             
             Intro.Visibility = rdoIntro.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
-            Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
             Intro.ConnexioEditro = this;
+            Intro.netejarInfo();
+
+            Level.Visibility = Intro.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             Level.ConnexioEditor = this;
+            Level.netejarInfoLevel();
+            Level.netejargraella();
 
 
-            
+            GRDLevel.SelectedItem = null;
+
+
         }
 
         private void GRDLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)

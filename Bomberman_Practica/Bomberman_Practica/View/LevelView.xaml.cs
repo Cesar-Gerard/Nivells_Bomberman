@@ -153,16 +153,29 @@ namespace Bomberman_Practica.View
 
 
                 Level nou = new Level(nom, des, hores, minuts, segons, estat);
-                Level.InserirNivell(nou);
-                int id = Level.getIdLevel(nou.Nom);
-                nou.Id= id;
-                this.guardarBlocs(nou);
 
-                ConnexioEditor.obtenir_intro_nivell();
+                if (comprovarNoRepeticioIniciFinal())
+                {
+                    var messageDialog = new MessageDialog("Només es poden guardar els nivells que tinguin un punt de inici i final");
+                    messageDialog.ShowAsync();
+                }
+                else
+                {
+
+
+
+                    Level.InserirNivell(nou);
+                    int id = Level.getIdLevel(nou.Nom);
+                    nou.Id = id;
+                    this.guardarBlocs(nou);
+
+                    ConnexioEditor.obtenir_intro_nivell();
+                    netejarInfoLevel();
+                }
 
             }
 
-            netejarInfoLevel();
+           
         }
 
 
@@ -187,25 +200,71 @@ namespace Bomberman_Practica.View
             String nom = nou.Nom;
             String resultat="";
 
+
+
+                for (j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+                {
+                    for (x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                    {
+
+                        UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i++);
+
+                        int num_casella = (int)fill.Tag;
+
+
+
+                        Level.guardarBlocs(nou.Id, x, j, num_casella);
+
+                    }
+
+                }
+            
+        }
+
+        private Boolean comprovarNoRepeticioIniciFinal()
+        {
+            int i = 0;
+            int j;
+            int x;
+
+            int inici = 0;
+            int final = 0;
+
+
             for (j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
             {
                 for (x = 0; x < grdNivell.RowDefinitions.Count; x++)
                 {
 
-                    UI_GRID fill= (UI_GRID)grdNivell.Children.ElementAt(i++);
+                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i++);
 
-                    int num_casella =(int) fill.Tag;
+                    int num_casella = (int)fill.Tag;
 
-                    
+                    if(num_casella == 5)
+                    {
+                        inici++;
+                    }else if (num_casella == 6)
+                    {
+                        final++;
+                    }
 
-                    Level.guardarBlocs(nou.Id, x, j, num_casella);
+                   
 
                 }
-               
+
             }
+
+            if(inici >1 || final > 1 || inici==0 || final ==0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
-
-
 
         public void UpdateBlocsNivell(Level actualitzat)
         {
@@ -390,7 +449,13 @@ namespace Bomberman_Practica.View
             {
                 if (Level.getNomNivell(nou.Nom) && Level.getIdLevel(nou.Nom)!=nou.Id)
                 {
-                    var messageDialog = new MessageDialog("No pots actualitzar la introducció actual amb el nom de una altre ja existent");
+                    var messageDialog = new MessageDialog("No pots actualitzar el nivell actual actual amb el nom de una altre ja existent");
+                    messageDialog.ShowAsync();
+                }
+
+                else if (comprovarNoRepeticioIniciFinal())
+                {
+                    var messageDialog = new MessageDialog("Només es poden guardar els nivells que tinguin un punt de inici i final");
                     messageDialog.ShowAsync();
                 }
                 else
