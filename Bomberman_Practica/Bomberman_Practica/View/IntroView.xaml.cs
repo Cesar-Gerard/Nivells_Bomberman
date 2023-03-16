@@ -34,41 +34,24 @@ namespace Bomberman_Practica.View
     public sealed partial class IntroView : UserControl
     {
 
-       
+       //Elements Globals
         BitmapImage tmpBitmap = null;
 
-
+        /// <summary>
+        /// Constructor del UserControl de Introducció
+        /// </summary>
         public IntroView()
         {
             this.InitializeComponent();
 
         }
 
-
-        public Intro Introduccio
-        {
-            get { return (Intro)GetValue(IntroduccioProperty); }
-            set { SetValue(IntroduccioProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty IntroduccioProperty =
-            DependencyProperty.Register("Introduccio", typeof(Intro), typeof(IntroView), new PropertyMetadata(null));
-
-
-
-
-        public BitmapSource UI_Fons
-        {
-            get { return (BitmapSource)GetValue(UI_FonsProperty); }
-            set { SetValue(UI_FonsProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for UI_Fons.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty UI_FonsProperty =
-            DependencyProperty.Register("UI_Fons", typeof(BitmapSource), typeof(LevelView), new PropertyMetadata(new BitmapImage(new Uri("ms-appx:///Assets/bomb.png"))));
-
-
+        
+        /// <summary>
+        /// Comportament del Buto encarregat de carregar una mova imatge seleccionada del explorador d'arxius
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnImatge_Click(object sender, RoutedEventArgs e)
         {
             FileOpenPicker fp = new FileOpenPicker();
@@ -111,6 +94,12 @@ namespace Bomberman_Practica.View
 
         }
 
+
+        /// <summary>
+        /// Comportament del butó encarregat del preview de la introducio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ContentDialog1 entrada = new ContentDialog1(this);
@@ -135,6 +124,9 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Carrega els valors dels combobox del temps de una introduccio
+        /// </summary>
         private void carregarComboTemps()
         {
             for (int i = 0; i < 60; i++)
@@ -148,30 +140,51 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Loaded del UserControl de la introduccio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             carregarComboTemps();
             
         }
 
-        //Metodes per recuperar els elements de informació en el content view
 
+        #region Metodes per recuperar els elements de informació en el content view
 
+        /// <summary>
+        /// Retorna el nom actual de la introducció 
+        /// </summary>
+        /// <returns></returns>
         public String recuperarTitol()
         {
             return txbNom.Text;
         }
 
+        /// <summary>
+        /// Retorna la descripció actual de la introducció
+        /// </summary>
+        /// <returns></returns>
         public String recuperarDescripcio()
         {
             return txbDesc.Text;
         }
 
+        /// <summary>
+        /// Retorna la imatge actual de la introducció
+        /// </summary>
+        /// <returns></returns>
         public ImageSource recuperarImatge()
         {
             return imgfons.Source;
         }
 
+        /// <summary>
+        /// Retorna el temps actual de la introducció
+        /// </summary>
+        /// <returns></returns>
         public List<Int32> recuperarTemps()
         {
             List<Int32> temps= new List<Int32>();
@@ -184,10 +197,14 @@ namespace Bomberman_Practica.View
             return temps;
         }
 
+        #endregion
 
 
-
-
+        /// <summary>
+        /// Comportament del botó de crear una nova introducció
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCrear_Click(object sender, RoutedEventArgs e)
         {
 
@@ -202,7 +219,10 @@ namespace Bomberman_Practica.View
         }
 
 
-
+        /// <summary>
+        /// Agafa la informació del formulari per crear el objecte Introducció que es crearà a la BD
+        /// </summary>
+        /// <returns></returns>
         public Intro inserirIntro()
         {
 
@@ -262,77 +282,24 @@ namespace Bomberman_Practica.View
         }
 
 
+        #region Accès a elements externs
 
-
-
-        public Intro actualitzarIntro()
-        {
-
-
-                int hores = Int32.Parse(cbmHores.SelectedItem.ToString()); ;
-                int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString()); ;
-                int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
-
-
-
-                if ( txbNom.Text == "")
-                {
-                    var messageDialog = new MessageDialog("No pots registrar una introducció amb un nom buit");
-                    messageDialog.ShowAsync();
-
-                    return null;
-                }
-
-                else if (hores == 0 && minuts == 0 && segons == 0)
-                {
-                    var messageDialog = new MessageDialog("No pots registrar una introducció amb una duració menor a 1 segon");
-                    messageDialog.ShowAsync();
-
-                    return null;
-                }
-
-                else
-                {
-
-                    BitmapImage bitMap = imgfons.Source as BitmapImage;
-                    Uri uri = bitMap?.UriSource;
-
-                   
-                    String nom = txbNom.Text;
-                    String des = txbDesc.Text;
-                    String imatge = uri.AbsolutePath;
-                    bool estat = false;
-
-                    if (chEstat.IsChecked == true)
-                    {
-                        estat = true;
-                    }
-                    else
-                    {
-                        estat = false;
-                    }
-
-
-                    Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
-
-
-                    return nou;
-                }
-            
-
-        }
-
-        
-
-
-
-
+        /// <summary>
+        /// Dona accès als métodes de la pantalla Editor
+        /// </summary>
         public Editor ConnexioEditro { get; set; }
 
+        /// <summary>
+        /// Ens dona accès als atributs de la Introducció seleccionada a la DataGrid de Editor
+        /// </summary>
         public Intro LamevaIntro { get; set; }
 
+        #endregion
 
 
+        /// <summary>
+        /// Presenta la informació de la introducció seleccionada
+        /// </summary>
         public void canviarText()
         {
             txbNom.Text = LamevaIntro.Nom;
@@ -357,12 +324,15 @@ namespace Bomberman_Practica.View
 
             }
 
-
+            //Fem seleccionable el butó de actualitzar
+            btnActualitzar.IsEnabled = true;
 
         }
 
 
-
+        /// <summary>
+        /// Neteja els camps de informació de la Introducció
+        /// </summary>
         public void netejarInfo()
         {
             txbNom.Text = "";
@@ -379,12 +349,85 @@ namespace Bomberman_Practica.View
             imgfons.Source = pred;
         }
 
+        /// <summary>
+        /// ´Botó que neteja la informació
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btncancelar_Click(object sender, RoutedEventArgs e)
         {
             netejarInfo();
 
         }
 
+
+        /// <summary>
+        /// Retorna una Introducció amb els valors que es volen actualitzar a la Introducció seleccionada
+        /// </summary>
+        /// <returns></returns>
+        public Intro actualitzarIntro()
+        {
+
+
+            int hores = Int32.Parse(cbmHores.SelectedItem.ToString()); ;
+            int minuts = Int32.Parse(cbmMinuts.SelectedItem.ToString()); ;
+            int segons = Int32.Parse(cbmSegons.SelectedItem.ToString()); ;
+
+
+
+            if (txbNom.Text == "")
+            {
+                var messageDialog = new MessageDialog("No pots registrar una introducció amb un nom buit");
+                messageDialog.ShowAsync();
+
+                return null;
+            }
+
+            else if (hores == 0 && minuts == 0 && segons == 0)
+            {
+                var messageDialog = new MessageDialog("No pots registrar una introducció amb una duració menor a 1 segon");
+                messageDialog.ShowAsync();
+
+                return null;
+            }
+
+            else
+            {
+
+                BitmapImage bitMap = imgfons.Source as BitmapImage;
+                Uri uri = bitMap?.UriSource;
+
+
+                String nom = txbNom.Text;
+                String des = txbDesc.Text;
+                String imatge = uri.AbsolutePath;
+                bool estat = false;
+
+                if (chEstat.IsChecked == true)
+                {
+                    estat = true;
+                }
+                else
+                {
+                    estat = false;
+                }
+
+
+                Intro nou = new Intro(nom, des, hores, minuts, segons, estat, imatge);
+
+
+                return nou;
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// Botó que crida als metodes que actualitzen la informació de la Introducció seleccionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualitzar_Click(object sender, RoutedEventArgs e)
         {
             Intro actualitzar = actualitzarIntro();

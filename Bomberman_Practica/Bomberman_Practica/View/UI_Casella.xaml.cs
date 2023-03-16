@@ -26,7 +26,9 @@ namespace Bomberman_Practica.View
         }
 
 
-
+        /// <summary>
+        /// Propdp per als items de la ListView de tipus de caselles
+        /// </summary>
         public Casella Seleccio
         {
             get { return (Casella)GetValue(SeleccioProperty); }
@@ -36,13 +38,6 @@ namespace Bomberman_Practica.View
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SeleccioProperty =
             DependencyProperty.Register("Seleccio", typeof(Casella), typeof(UI_Casella), new PropertyMetadata(null));
-
-
-
-
-        
-
-
 
     }
 }

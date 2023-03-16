@@ -15,10 +15,11 @@ namespace ConnexioBD
 {
     public class Intro : Level
     {
+        //Atributs
         public string url;
 
-        
 
+        #region Constructors
         public Intro(int id, string nom, string descripcio, int hores, int minuts, int segons, bool actiu, string url) : base(id,nom, descripcio, hores, minuts, segons, actiu)
         {
             Url = url;
@@ -28,19 +29,19 @@ namespace ConnexioBD
         {
             Url = url;
         }
+        #endregion
 
-
+        //Getter i Setter del atribut únic de la classe
         public string Url { get => url; set => url = value; }
-
-
-
-
-
 
 
         //Métodes SQL
 
-
+        /// <summary>
+        /// Inserir nova introducció a la BD
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <returns></returns>
         public static Boolean Inserir(Intro entrada)
         {
 
@@ -80,10 +81,10 @@ namespace ConnexioBD
         }
 
 
-
-
-
-
+        /// <summary>
+        /// Obtenir totes les introduccions registrades a la BD
+        /// </summary>
+        /// <returns></returns>
         public static ObservableCollection<Intro> getIntro()
         {
             ObservableCollection<Intro> resultat = new ObservableCollection<Intro>();
@@ -122,7 +123,11 @@ namespace ConnexioBD
         }
 
 
-
+        /// <summary>
+        /// Eliminar la intro pasada per parametre
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <returns></returns>
         public static Boolean eliminarIntro(Intro entrada)
         {
             DbTransaction transaccio = null;
@@ -171,8 +176,59 @@ namespace ConnexioBD
         }
 
 
+        /// <summary>
+        /// Actualitzar la introducció "antic" amb els valors de "nou"
+        /// </summary>
+        /// <param name="nou"></param>
+        /// <param name="antic"></param>
+        /// <returns></returns>
+        public static Boolean Update(Intro nou, Intro antic)
+        {
+
+            int last_id = 0;
+
+            using (MySQLDbContext context = new MySQLDbContext())
+            {
+                using (var connection = context.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var comanda = connection.CreateCommand())
+                    {
 
 
+
+
+                        comanda.CommandText = @"update introduccio set intro_nom=@intro_nom,intro_desc=@intro_desc,hores=@hores,minuts=@minuts,segons=@segons,intro_imatge=@intro_imatge,estat=@estat where id_introduccio = @id_antic";
+
+                        DBUtils.afegirParametre(comanda, "id_antic", antic.Id, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "intro_nom", nou.Nom, DbType.String);
+                        DBUtils.afegirParametre(comanda, "intro_desc", nou.Descripcio, DbType.String);
+                        DBUtils.afegirParametre(comanda, "hores", nou.Hores, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "minuts", nou.Minuts, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "segons", nou.Segons, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "intro_imatge", nou.Url, DbType.String);
+                        DBUtils.afegirParametre(comanda, "estat", nou.Actiu, DbType.Boolean);
+
+                        Int32 filesInserides = comanda.ExecuteNonQuery();
+
+
+
+
+                        return filesInserides == 1;
+                    }
+                }
+            }
+
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Comprovar si existeix un nivell ja existent amb el nom passat  per paràmetre
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
         public static Boolean getNom(string nom)
         {
 
@@ -214,50 +270,11 @@ namespace ConnexioBD
         }
 
 
-        public static Boolean Update(Intro nou, Intro antic)
-        {
-
-            int last_id = 0;
-
-            using (MySQLDbContext context = new MySQLDbContext())
-            {
-                using (var connection = context.Database.GetDbConnection())
-                {
-                    connection.Open();
-                    using (var comanda = connection.CreateCommand())
-                    {
-
-
-                       
-
-                        comanda.CommandText = @"update introduccio set intro_nom=@intro_nom,intro_desc=@intro_desc,hores=@hores,minuts=@minuts,segons=@segons,intro_imatge=@intro_imatge,estat=@estat where id_introduccio = @id_antic";
-
-                        DBUtils.afegirParametre(comanda, "id_antic", antic.Id, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "intro_nom", nou.Nom, DbType.String);
-                        DBUtils.afegirParametre(comanda, "intro_desc", nou.Descripcio, DbType.String);
-                        DBUtils.afegirParametre(comanda, "hores", nou.Hores, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "minuts", nou.Minuts, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "segons", nou.Segons, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "intro_imatge", nou.Url, DbType.String);
-                        DBUtils.afegirParametre(comanda, "estat", nou.Actiu, DbType.Boolean);
-
-                        Int32 filesInserides = comanda.ExecuteNonQuery();
-
-
-
-
-                        return filesInserides == 1;
-                    }
-                }
-            }
-
-
-            return false;
-        }
-
-
-
-
+        /// <summary>
+        /// Retorna el id de la introducció passada per parametre per assignar-li aquest a la seva versió local sense id
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <returns></returns>
         public static int getIdIntro(Intro entrada)
         {
             int resultat = 0;
@@ -283,13 +300,6 @@ namespace ConnexioBD
             return resultat;
         }
     }
-
-
-
-
-
-
-
 
 }
     

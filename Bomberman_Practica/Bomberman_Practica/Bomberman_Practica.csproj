@@ -156,6 +156,7 @@
     <Content Include="Assets\enemy.png" />
     <Content Include="Assets\finsih_point.png" />
     <Content Include="Assets\fons_grid.png" />
+    <Content Include="Assets\icon.png" />
     <Content Include="Assets\indestructible.png" />
     <Content Include="Assets\soft.png" />
     <Content Include="Assets\start_point.png" />

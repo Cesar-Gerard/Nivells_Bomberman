@@ -36,12 +36,12 @@
 
             <!--Nom de la Intro-->
             <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Right" Margin="10 10 0 10">Nom:</TextBlock>
-            <TextBox  FontSize="13" x:Name="txbNom"  Width="100" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox  FontSize="13" x:Name="txbNom"  Width="150" Height="35" Margin="10 10 0 10" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"></TextBox>
 
 
             <!--Text de la Intro-->
             <TextBlock  Margin="10 10 0 10" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" FontSize="15"><Run Text="Intro Text "/><Run Text=":"/></TextBlock>
-            <TextBox   HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox   TextWrapping="Wrap" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="txbDesc" Text="" Width="200" Height="100"  Margin="10 10 0 10" FontSize="13"></TextBox>
 
 
             <!--Temps de la Intro-->
@@ -57,7 +57,7 @@
 
                 <!--Imatge de la Intro-->
             <TextBlock  Margin="10 10 0 10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"><Run Text="Imatge "/><Run Text=":"/></TextBlock>
-            <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="110" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" x:Name="txbImatge" Text="" Width="130" Height="35"  Margin="10 10 0 10" FontSize="13"></TextBox>
             <Button x:Name="btnImatge" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="btnImatge_Click">Browse</Button>
 
        
@@ -73,12 +73,12 @@
 
 
         <Border BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Center" MinHeight="200" MaxHeight="200">
-            <Image x:Name="imgfons" Source="{Binding ElementName=imgintro, Path=UI_Fons ,FallbackValue='/Assets/bomb.png'}"></Image>
+            <Image x:Name="imgfons" Source="{Binding FallbackValue='/Assets/bomb.png'}"></Image>
         </Border>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="btncancelar" Click="btncancelar_Click" Margin="10,10,10,10">Netejar</Button>
-            <Button x:Name="btnActualitzar" Click="btnActualitzar_Click">Actualitzar</Button>
+            <Button x:Name="btnActualitzar" Click="btnActualitzar_Click" IsEnabled="False">Actualitzar</Button>
         </StackPanel>
    
     </StackPanel>

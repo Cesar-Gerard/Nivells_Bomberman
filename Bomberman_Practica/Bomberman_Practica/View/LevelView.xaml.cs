@@ -37,9 +37,12 @@ namespace Bomberman_Practica.View
    
     public sealed partial class LevelView : UserControl
     {
+        //Elements Globals
         int start_point;
         int finish_point;
 
+
+        //Constructor
         public LevelView()
         {
             this.InitializeComponent();
@@ -50,7 +53,9 @@ namespace Bomberman_Practica.View
         }
 
         
-        
+        /// <summary>
+        /// Crea i assigna els fills del grid per crear la graella del nivell
+        /// </summary>
         private void carregarGrid()
         {
             for(int i =0; i<10; i++)
@@ -76,17 +81,12 @@ namespace Bomberman_Practica.View
             
         }
 
-        public Level Nivell
-        {
-            get { return (Level)GetValue(NivellProperty); }
-            set { SetValue(NivellProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Nivell.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty NivellProperty =
-            DependencyProperty.Register("Nivell", typeof(Level), typeof(LevelView), new PropertyMetadata(null));
-
-
+        
+        /// <summary>
+        /// Prepara els elements i l'estat del UserControl quan es carrega
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //Carreguem les imatges dels elements disponibles 
@@ -96,9 +96,10 @@ namespace Bomberman_Practica.View
         }
 
 
-
-
-
+        /// <summary>
+        /// Retorna com a Casella l'item de la ListView seleccionat
+        /// </summary>
+        /// <returns></returns>
         public Casella pregunta_Item()
         {
            
@@ -109,11 +110,22 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Controla els canvis de selecció del listview de caselles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lsvBlocs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             pregunta_Item();
         }
 
+
+        /// <summary>
+        /// Crea el nivell, el guarda a la BD y també la graella de nivell corresponent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCrearNIvell_Click(object sender, RoutedEventArgs e)
         {
            int hores = Int32.Parse(cbmHores.SelectedItem.ToString());
@@ -179,6 +191,9 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Carrega el valor de temps dels combobox del nivell
+        /// </summary>
         private void carregarComboTemps()
         {
             for (int i = 0; i < 60; i++)
@@ -192,6 +207,10 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Recorre totes les columnes i files de la graella y guarda a la BD el tipus de casella y la posicio de cada cel·la 
+        /// </summary>
+        /// <param name="nou"></param>
         public void guardarBlocs(Level nou)
         {
             int i=0;
@@ -221,6 +240,11 @@ namespace Bomberman_Practica.View
             
         }
 
+
+        /// <summary>
+        /// Comprova el nombre mínim i màxim de les caselles de inici i final 
+        /// </summary>
+        /// <returns></returns>
         private Boolean comprovarNoRepeticioIniciFinal()
         {
             int i = 0;
@@ -266,6 +290,11 @@ namespace Bomberman_Practica.View
 
         }
 
+
+        /// <summary>
+        /// Llegeix el valor actualitzat de totes les cel·les per fer la actualització de la graella a la BD
+        /// </summary>
+        /// <param name="actualitzat"></param>
         public void UpdateBlocsNivell(Level actualitzat)
         {
             int i = 0;
@@ -294,13 +323,22 @@ namespace Bomberman_Practica.View
         }
 
 
-
-
-
+        #region Accés a elements externs
+        /// <summary>
+        /// Ens dona accès als atributs del nivell seleccionat a la DataGrid de Editor
+        /// </summary>
         public Level ElmeuLevel { get; set; }
 
+        /// <summary>
+        /// Dona accès als métodes de la pantalla Editor
+        /// </summary>
         public Editor ConnexioEditor { get; set; }
+        #endregion
 
+
+        /// <summary>
+        /// ctualitza els elements de informació per la del Nivellseleccionat al DataGrid
+        /// </summary>
         public void canviarText()
         {
             txbNom.Text = ElmeuLevel.Nom;
@@ -321,6 +359,9 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Neteja tota la informació presentada
+        /// </summary>
         public void netejarInfoLevel()
         {
             txbNom.Text = "";
@@ -337,12 +378,45 @@ namespace Bomberman_Practica.View
         }
 
 
+        /// <summary>
+        /// Neteja a graella de cel·les del nivell i les retorna al seu valor per defecte
+        /// </summary>
+        public void netejargraella()
+        {
+            int i = 0;
+            for (int j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
+            {
+                for (int x = 0; x < grdNivell.RowDefinitions.Count; x++)
+                {
+                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i);
+                    if (fill != null)
+                    {
+                        fill.rebre_casella(new Casella("", "", 1));
+                        i++;
+                    }
+
+                }
+
+            }
+        }
+
+
+        /// <summary>
+        /// Activa la nateja de informació del UserControl
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btncancelar_Click(object sender, RoutedEventArgs e)
         {
             netejarInfoLevel();
 
         }
 
+
+        /// <summary>
+        /// Omple la graella amb les cel·les guardades a la BD corresponent al nivell seleccionat al DataGrid
+        /// </summary>
+        /// <param name="recuperar"></param>
         private void omplirgraella(List<Casella> recuperar)
         {
             int i = 0;
@@ -364,26 +438,13 @@ namespace Bomberman_Practica.View
 
         }
 
-        public void netejargraella()
-        {
-            int i = 0;
-            for (int j = 0; j < grdNivell.ColumnDefinitions.Count; j++)
-            {
-                for (int x = 0; x < grdNivell.RowDefinitions.Count; x++)
-                {
-                    UI_GRID fill = (UI_GRID)grdNivell.Children.ElementAt(i);
-                    if (fill != null)
-                    {
-                        fill.rebre_casella(new Casella("","",1));
-                        i++;
-                    }
+        
+        
 
-                }
-
-            }
-        }
-
-
+        /// <summary>
+        /// Crea un nou nivell amb la informació amb la que es vol substituir al seleccionat al DataGrid de Editor
+        /// </summary>
+        /// <returns></returns>
         public Level actualitzarLevel()
         {
             Level actualitzat = null;
@@ -439,7 +500,11 @@ namespace Bomberman_Practica.View
         }
 
 
-
+        /// <summary>
+        /// Actualitza la informació del nivell seleccionat per la nova informació proporcionada per el nou objecte nivell
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualitzar_Click(object sender, RoutedEventArgs e)
         {
             Level nou = actualitzarLevel();

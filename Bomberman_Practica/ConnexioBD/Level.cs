@@ -13,6 +13,7 @@ namespace ConnexioBD
 {
     public class Level
     {
+        //Atributs de Classe
         String nom;
         String descripcio;
         int hores;
@@ -21,8 +22,8 @@ namespace ConnexioBD
         bool actiu;
         int [][] elements = null;
         int id;
-        
 
+        #region Constructors
         public Level(int id,string nom, string descripcio, int hores, int minuts, int segons, bool actiu)
         {
             Id = id;
@@ -46,6 +47,11 @@ namespace ConnexioBD
             Actiu = actiu;
         }
 
+        #endregion
+
+
+
+        #region Getters i Setters
         public string Nom { get => nom; set => nom = value; }
         public string Descripcio { get => descripcio; set => descripcio = value; }
         public int Hores { get => hores; set => hores = value; }
@@ -55,22 +61,17 @@ namespace ConnexioBD
         public int[][] Elements { get => elements; set => elements = value; }
         public int Id { get => id; set => id = value; }
 
-        public List<Int32> recuperarTemps()
-        {
-            List<Int32> temps = new List<Int32>();
+        #endregion
 
-
-
-            temps.Add(this.hores);
-            temps.Add(this.minuts);
-            temps.Add(this.segons);
-            return temps;
-        }
 
 
         //Métodes SQL
 
-
+        /// <summary>
+        /// Inserir nou Nivell a la BD
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <returns></returns>
         public static Boolean InserirNivell(Level entrada)
         {
 
@@ -106,10 +107,10 @@ namespace ConnexioBD
         }
 
 
-
-
-
-
+        /// <summary>
+        /// Obtenir tots els nivells existents
+        /// </summary>
+        /// <returns></returns>
         public static ObservableCollection<Level> getNivell()
         {
             ObservableCollection<Level> resultat = new ObservableCollection<Level>();
@@ -146,11 +147,49 @@ namespace ConnexioBD
         }
 
 
-      
+        /// <summary>
+        /// Insereix a la taula nivell_caselles els blocs del nivell corresponent al "id"
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="x"></param>
+        /// <param name="j"></param>
+        /// <param name="num_casella"></param>
+        /// <returns></returns>
+        public static Boolean guardarBlocs(int id, int x, int j, int num_casella)
+        {
+            using (MySQLDbContext context = new MySQLDbContext())
+            {
+                using (var connection = context.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var comanda = connection.CreateCommand())
+                    {
 
 
+                        comanda.CommandText = @"insert into nivell_caselles(id,cX,cY,valor) values(@id_nivell,@x,@y,@num_casella)";
+
+                        DBUtils.afegirParametre(comanda, "id_nivell", id, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "x", x, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "y", j, DbType.Int32);
+                        DBUtils.afegirParametre(comanda, "num_casella", num_casella, DbType.Int32);
+
+                        Int32 filesInserides = comanda.ExecuteNonQuery();
+
+                        return filesInserides == 1;
+                    }
+                }
+            }
 
 
+            return false;
+        }
+
+
+        /// <summary>
+        /// Eliminar el nivell pasat per paràmetre mitjançant el seu Id
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <returns></returns>
         public static Boolean eliminarLevel(Level entrada)
         {
             DbTransaction transaccio = null;
@@ -202,7 +241,68 @@ namespace ConnexioBD
         }
 
 
+        /// <summary>
+        /// Elimina el nivell identificat amb el id passat per parametre
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Boolean DeleteBlocsNivell(int id)
+        {
+            DbTransaction transaccio = null;
+            try
+            {
+                using (MySQLDbContext context = new MySQLDbContext())
+                {
+                    using (var connection = context.Database.GetDbConnection())
+                    {
+                        connection.Open();
 
+                        transaccio = connection.BeginTransaction();
+                        using (var comanda = connection.CreateCommand())
+                        {
+
+
+
+
+
+                            comanda.CommandText =
+                                "delete from nivell_caselles where id=@nivell_id";
+                            //-----------------------------------------------
+                            //    IMPORTANT !!! posem la comanda dins de la transacció
+                            //-----------------------------------------------
+                            comanda.Transaction = transaccio; //
+                            //-----------------------------------------------
+                            DBUtils.afegirParametre(comanda, "nivell_id", id, DbType.Int32);
+                            int liniesAfectades = comanda.ExecuteNonQuery();
+                            if (liniesAfectades < 1)
+                            {
+                                transaccio.Rollback();
+
+                            }
+                            else
+                            {
+                                transaccio.Commit();
+                                return true;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR" + ex);
+            }
+            return false;
+        }
+
+
+        /// <summary>
+        /// Actualitzar el nivell "Antic" amb els valors del nivell "Nou"
+        /// </summary>
+        /// <param name="nou"></param>
+        /// <param name="antic"></param>
+        /// <returns></returns>
         public static Boolean UpdateLevel(Level nou, Level antic)
         {
 
@@ -242,7 +342,16 @@ namespace ConnexioBD
             return false;
         }
 
-        public static Boolean guardarBlocs(int id, int x, int j, int num_casella)
+
+        /// <summary>
+        /// Actualitza els blocs del nivell del nivell idetificat amb el id passat per paràmetre
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="x"></param>
+        /// <param name="j"></param>
+        /// <param name="num_casella"></param>
+        /// <returns></returns>
+        public static Boolean BlocsNivellUpdateBD(int id, int x, int j, int num_casella)
         {
             using (MySQLDbContext context = new MySQLDbContext())
             {
@@ -252,8 +361,7 @@ namespace ConnexioBD
                     using (var comanda = connection.CreateCommand())
                     {
 
-
-                        comanda.CommandText = @"insert into nivell_caselles(id,cX,cY,valor) values(@id_nivell,@x,@y,@num_casella)";
+                        comanda.CommandText = @"update nivell_caselles set valor=@num_casella where id = @id_nivell and cX=@x and cY=@y";
 
                         DBUtils.afegirParametre(comanda, "id_nivell", id, DbType.Int32);
                         DBUtils.afegirParametre(comanda, "x", x, DbType.Int32);
@@ -262,7 +370,10 @@ namespace ConnexioBD
 
                         Int32 filesInserides = comanda.ExecuteNonQuery();
 
-                        return filesInserides == 1;
+
+
+
+                        return filesInserides >= 1;
                     }
                 }
             }
@@ -272,7 +383,11 @@ namespace ConnexioBD
         }
 
 
-
+        /// <summary>
+        /// Comprova si existeix un nivell amb el mateix nom
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
         public static Boolean getNomNivell(string nom)
         {
 
@@ -314,14 +429,11 @@ namespace ConnexioBD
         }
 
 
-
-
-
-
-
-
-
-
+        /// <summary>
+        /// Retorna el Id de un nivell per poder assignar-lo a la seva versió sense id
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
         public static int getIdLevel(String nom)
         {
             int resultat = 0;
@@ -348,13 +460,11 @@ namespace ConnexioBD
         }
 
 
-
-
-
-
-        //retorna els blocs del nivell i la seva posicio
-
-
+        /// <summary>
+        /// Retorna els blocs del nivell i la seva posicio a la graella
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<Casella> getBlocsNivell(int id)
         {
             List<Casella> blocs = new List<Casella>();
@@ -385,93 +495,7 @@ namespace ConnexioBD
             return blocs;
         }
 
-        public static Boolean BlocsNivellUpdateBD(int id, int x, int j, int num_casella)
-        {
-            using (MySQLDbContext context = new MySQLDbContext())
-            {
-                using (var connection = context.Database.GetDbConnection())
-                {
-                    connection.Open();
-                    using (var comanda = connection.CreateCommand())
-                    {
-
-                        comanda.CommandText = @"update nivell_caselles set valor=@num_casella where id = @id_nivell and cX=@x and cY=@y";
-
-                        DBUtils.afegirParametre(comanda, "id_nivell", id, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "x", x, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "y", j, DbType.Int32);
-                        DBUtils.afegirParametre(comanda, "num_casella", num_casella, DbType.Int32);
-
-                        Int32 filesInserides = comanda.ExecuteNonQuery();
-
-
-
-
-                        return filesInserides >= 1;
-                    }
-                }
-            }
-
-
-            return false;
-        }
-
-
-
-        public static Boolean DeleteBlocsNivell(int id)
-        {
-            DbTransaction transaccio = null;
-            try
-            {
-                using (MySQLDbContext context = new MySQLDbContext())
-                {
-                    using (var connection = context.Database.GetDbConnection())
-                    {
-                        connection.Open();
-
-                        transaccio = connection.BeginTransaction();
-                        using (var comanda = connection.CreateCommand())
-                        {
-
-
-
-
-
-                            comanda.CommandText =
-                                "delete from nivell_caselles where id=@nivell_id";
-                            //-----------------------------------------------
-                            //    IMPORTANT !!! posem la comanda dins de la transacció
-                            //-----------------------------------------------
-                            comanda.Transaction = transaccio; //
-                            //-----------------------------------------------
-                            DBUtils.afegirParametre(comanda, "nivell_id", id, DbType.Int32);
-                            int liniesAfectades = comanda.ExecuteNonQuery();
-                            if (liniesAfectades <1)
-                            {
-                                transaccio.Rollback();
-
-                            }
-                            else
-                            {
-                                transaccio.Commit();
-                                return true;
-                            }
-
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR" + ex);
-            }
-            return false;
-        }
-
-
     }
-
-
 
    
 }

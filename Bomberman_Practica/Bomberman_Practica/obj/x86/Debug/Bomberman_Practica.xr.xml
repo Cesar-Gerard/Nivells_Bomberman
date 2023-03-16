@@ -7,7 +7,6 @@
     <RootPropertyPathName Name="Hores" />
     <RootPropertyPathName Name="Descripcio" />
     <RootPropertyPathName Name="Nom" />
-    <RootPropertyPathName Name="UI_Fons" />
     <RootPropertyPathName Name="Seleccio" />
     <RootPropertyPathName Name="Img" />
     <RootPropertyPathName Name="MyProperty" />
@@ -73,6 +72,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
@@ -96,9 +96,9 @@
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="FallbackValue" />
       <RootProperty Name="ElementName" />
       <RootProperty Name="Path" />
-      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Bomberman_Practica.Editor" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -175,6 +175,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">

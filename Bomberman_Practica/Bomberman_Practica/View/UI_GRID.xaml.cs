@@ -23,9 +23,10 @@ namespace Bomberman_Practica.View
 {
     public sealed partial class UI_GRID : UserControl
     {
+        
         private LevelView level;
 
-
+        //constructor del UserControl
         public UI_GRID(LevelView level)
         {   
             this.InitializeComponent();
@@ -34,7 +35,9 @@ namespace Bomberman_Practica.View
 
 
 
-
+        /// <summary>
+        /// Propdp per la imatge de la graella
+        /// </summary>
         public BitmapSource MyProperty
         {
             get { return (BitmapSource)GetValue(MyPropertyProperty); }
@@ -49,7 +52,11 @@ namespace Bomberman_Practica.View
 
 
 
-
+        /// <summary>
+        /// Comportament del recauadre al interactuar amb ell
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void grdFonsNivell_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Casella item = this.level.pregunta_Item();
@@ -65,6 +72,11 @@ namespace Bomberman_Practica.View
           
         }
 
+        /// <summary>
+        /// Comportament del border de la imatge del UserControl al passar per sobre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserControl_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             bFonsNivell.Background = new SolidColorBrush(Colors.WhiteSmoke);
@@ -72,12 +84,20 @@ namespace Bomberman_Practica.View
             
         }
 
+        /// <summary>
+        /// Comportament del border de la imatge del UserControl al sortir d'ell amb el ratolí
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserControl_PointerExited(object sender, PointerRoutedEventArgs e)
         {
             bFonsNivell.Background = new SolidColorBrush(Colors.Transparent);
         }
 
-
+        /// <summary>
+        /// Reb cada casella de la graella de un nivell y la col·loca i guarda amb la mida adequada
+        /// </summary>
+        /// <param name="entrada"></param>
         public void rebre_casella(Casella entrada)
         {
             entrada.retornaImatgeString(entrada.Id);

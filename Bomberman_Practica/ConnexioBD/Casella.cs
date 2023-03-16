@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace Bomberman_Practica.Model
 {
+    //Constructor de la clase casella per la llista de tipus de caselles 
     public class Casella
     {
-        //Constructor de la clase casella per la llista de tipus de caselles 
-
+        
+        //Atributs de la classe
         private string nom;
         private string img;
         private int id;
         private int cX;
         private int cY;
 
+
+        #region Constructors
         public Casella(string nom, string img, int id)
         {
             Nom = nom;
@@ -33,12 +36,26 @@ namespace Bomberman_Practica.Model
             
         }
 
+        #endregion
+
+        #region Getters i Setters
         public string Nom { get => nom; set => nom = value; }
         public string Img { get => img; set => img = value; }
         public int Id { get => id; set => id = value; }
         public int CX { get => cX; set => cX = value; }
         public int CY { get => cY; set => cY = value; }
 
+        #endregion
+
+
+
+        //Métodes de la classe
+
+
+        /// <summary>
+        /// Retorna un llistat del tipus de caselles existents
+        /// </summary>
+        /// <returns></returns>
         public static List<Casella> llistacasellas()
         {
             List<Casella> resultat = new List<Casella>();
@@ -54,7 +71,10 @@ namespace Bomberman_Practica.Model
         }
 
 
-
+        /// <summary>
+        /// Retorna un string depenent del valor del id de la casella
+        /// </summary>
+        /// <param name="valor"></param>
         public void retornaImatgeString(int valor)
         {
             String resultat = null;
@@ -102,8 +122,6 @@ namespace Bomberman_Practica.Model
 
 
         }
-
-
 
     }
 }

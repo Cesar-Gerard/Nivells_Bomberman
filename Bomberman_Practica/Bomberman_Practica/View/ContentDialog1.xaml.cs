@@ -21,12 +21,17 @@ namespace Bomberman_Practica.View
 {
     public sealed partial class ContentDialog1 : ContentDialog
     {
+        //Atributs Globals
         private String titol;
         private ImageSource imatge_source = null;
         private String descripcio;
         private List<Int32> temps;
 
-       
+ 
+        /// <summary>
+        /// Constructor del ContentDialog
+        /// </summary>
+        /// <param name="entrada"></param>
         public ContentDialog1(IntroView entrada)
         {
             this.InitializeComponent();
@@ -39,12 +44,21 @@ namespace Bomberman_Practica.View
             comptador_temps();
         }
 
-       
+       /// <summary>
+       /// Tanca el ContentDialoog de forma manual en comptes de esperar el temps establert
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
            
         }
 
+        /// <summary>
+        /// Loaded del ContentDialog on es carrega la informació pasada en el constructor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContentDialog_Loaded(object sender, RoutedEventArgs e)
         {
             TitolPreview.Text = titol;
@@ -54,6 +68,9 @@ namespace Bomberman_Practica.View
             
         }
 
+        /// <summary>
+        /// Comptador automatic que tanca el preview de la introduccio de forma automàtica
+        /// </summary>
         private void comptador_temps()
         {
             var timer = new DispatcherTimer();
@@ -67,6 +84,7 @@ namespace Bomberman_Practica.View
             };
             timer.Start();
         }
+
 
 
     }

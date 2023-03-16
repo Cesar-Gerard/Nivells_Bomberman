@@ -28,7 +28,7 @@ namespace Bomberman_Practica
     /// </summary>
     public sealed partial class Editor : Page
     {
-
+        //Declaració d'elements globals
         ObservableCollection<Level> nivells = null;
         ObservableCollection<Intro> intro = null;
 
@@ -37,6 +37,12 @@ namespace Bomberman_Practica
             this.InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Comportament dels RadioButtons en relació als UserControls de Intro i Level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rdoNivellLloc_Click(object sender, RoutedEventArgs e)
         {
            
@@ -57,6 +63,11 @@ namespace Bomberman_Practica
 
         }
 
+        /// <summary>
+        /// Comportament del canvi de item selecionat en el DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GRDLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -99,6 +110,11 @@ namespace Bomberman_Practica
 
         }
 
+        /// <summary>
+        /// Loaded de la pantalla Editor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -107,11 +123,10 @@ namespace Bomberman_Practica
 
                 
         }
-
-
-        
-        
-
+         
+        /// <summary>
+        /// Connexió amb la BD per obtenir els nivells i les intro registrades
+        /// </summary>
         public void obtenir_intro_nivell()
         {
             nivells = ConnexioBD.Level.getNivell();
@@ -128,11 +143,11 @@ namespace Bomberman_Practica
 
         }
 
-        
-
-
-
-
+        /// <summary>
+        /// Funcionament del botó de eliminar un element de la BD y del DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEsborrar_Click(object sender, RoutedEventArgs e)
         {
             if (GRDLevel.SelectedItem == null)
@@ -168,7 +183,7 @@ namespace Bomberman_Practica
 
             obtenir_intro_nivell();
             
-
+            //Evitar out of index Exception
             if (nivells.Count > 0)
             {
 
