@@ -78,7 +78,7 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:ConnectionId='2' x:Name="btncancelar"                           Margin="10,10,10,10">Netejar</Button>
-            <Button x:ConnectionId='3' x:Name="btnActualitzar"                             >Actualitzar</Button>
+            <Button x:ConnectionId='3' x:Name="btnActualitzar"                              IsEnabled="False">Actualitzar</Button>
         </StackPanel>
         
         

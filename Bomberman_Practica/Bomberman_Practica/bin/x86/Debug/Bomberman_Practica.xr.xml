@@ -119,9 +119,6 @@
       <RootProperty Name="Content" />
       <RootEvent Name="ItemInvoked" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItemHeader">
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItem">
       <RootProperty Name="Tag" />
       <RootProperty Name="Content" />

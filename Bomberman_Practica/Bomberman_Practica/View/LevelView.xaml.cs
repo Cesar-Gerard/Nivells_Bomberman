@@ -355,6 +355,8 @@ namespace Bomberman_Practica.View
             
             omplirgraella(recuperar);
 
+            btnActualitzar.IsEnabled = true;
+
 
         }
 

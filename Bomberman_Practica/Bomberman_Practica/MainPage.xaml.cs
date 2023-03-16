@@ -51,6 +51,7 @@ namespace Bomberman_Practica
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             NavegaA();
+            Editor.IsSelected = true;
         }
     }
 }

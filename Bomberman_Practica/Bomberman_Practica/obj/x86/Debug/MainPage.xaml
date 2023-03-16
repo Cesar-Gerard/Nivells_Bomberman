@@ -19,9 +19,7 @@
                             IsSettingsVisible="False"
                              PaneDisplayMode="Top">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader x:ConnectionId='3' x:Name="MainPagesHeader"
-                                           Content="Menú"/>
-                <NavigationViewItem Tag="A" Content="Editor de nivells">
+                <NavigationViewItem x:ConnectionId='3' x:Name="Editor" Tag="A" Content="Editor de nivells">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB3C;"/>
                     </NavigationViewItem.Icon>
