@@ -165,6 +165,7 @@ namespace Bomberman_Practica
 
                 ConnexioBD.Intro.eliminarIntro(eliminar);
                 Intro.netejarInfo();
+                Intro.BloquejarActualització();
 
 
             }
@@ -177,6 +178,7 @@ namespace Bomberman_Practica
 
                 ConnexioBD.Level.eliminarLevel(eliminar);
                 Level.netejarInfoLevel();
+                Level.BloquejarActualització();
                 
             }
 

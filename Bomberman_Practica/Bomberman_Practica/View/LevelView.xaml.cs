@@ -355,9 +355,7 @@ namespace Bomberman_Practica.View
             
             omplirgraella(recuperar);
 
-            btnActualitzar.IsEnabled = true;
-
-
+            desbloquejarActualització();
         }
 
 
@@ -440,8 +438,22 @@ namespace Bomberman_Practica.View
 
         }
 
-        
-        
+
+        /// <summary>
+        /// DEsbloqueja el boto de actualitzacio
+        /// </summary>
+        public void desbloquejarActualització()
+        {
+            btnActualitzar.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Bloqueja el boto de actualitzacio
+        /// </summary>
+        public void BloquejarActualització()
+        {
+            btnActualitzar.IsEnabled = false;
+        }
 
         /// <summary>
         /// Crea un nou nivell amb la informació amb la que es vol substituir al seleccionat al DataGrid de Editor

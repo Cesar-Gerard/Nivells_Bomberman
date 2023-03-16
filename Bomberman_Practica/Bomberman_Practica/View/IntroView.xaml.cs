@@ -325,7 +325,7 @@ namespace Bomberman_Practica.View
             }
 
             //Fem seleccionable el butó de actualitzar
-            btnActualitzar.IsEnabled = true;
+            desbloquejarActualització();
 
         }
 
@@ -449,6 +449,24 @@ namespace Bomberman_Practica.View
 
 
             } 
+        }
+
+
+        /// <summary>
+        /// DEsbloqueja el boto de actualitzacio
+        /// </summary>
+        public void desbloquejarActualització()
+        {
+            btnActualitzar.IsEnabled = true;
+        }
+
+
+        /// <summary>
+        /// Bloqueja el boto de actualitzacio
+        /// </summary>
+        public void BloquejarActualització()
+        {
+            btnActualitzar.IsEnabled = false;
         }
     }
 }
